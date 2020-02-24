@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.huaqing.org","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="2018年的尾巴上，在家闲的蛋疼。终于还是把All IN ONE组起来了，其实也不复杂。就是翻车鱼上面收了两根8G 1666 ECC内存，再把闲置多年的E3 1230 V2拿出来 ，事情就这么成了。这是自从出掉Gen8后的第一次折腾，这几年一直是黑群到底，简单，但也没什么新意。系统选择了ProxmoxVE，过程不说了，今天说说虚拟机上安装LEDE作为旁路由的安装和设置。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PVE下安装LEDE作为旁路由设置">
+<meta property="og:url" content="https://www.huaqing.org/archives/lede-openwart.html">
+<meta property="og:site_name" content="边走边说@Walking Talking">
+<meta property="og:description" content="2018年的尾巴上，在家闲的蛋疼。终于还是把All IN ONE组起来了，其实也不复杂。就是翻车鱼上面收了两根8G 1666 ECC内存，再把闲置多年的E3 1230 V2拿出来 ，事情就这么成了。这是自从出掉Gen8后的第一次折腾，这几年一直是黑群到底，简单，但也没什么新意。系统选择了ProxmoxVE，过程不说了，今天说说虚拟机上安装LEDE作为旁路由的安装和设置。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ae04.alicdn.com/kf/H50525622fe8d4a34be364a16ee4957dcw.png">
+<meta property="og:image" content="https://ae02.alicdn.com/kf/Ha096c381c379408286837eddb3d4a83c6.png">
+<meta property="og:image" content="https://ae04.alicdn.com/kf/H755a9523e30f4970a0e186429812d73fw.png">
+<meta property="og:image" content="https://ae05.alicdn.com/kf/Ha841e8b9ebcf45f7aade0610a51129717.png">
+<meta property="og:image" content="https://ae02.alicdn.com/kf/H6c983bc18d5e45c2a36b0e3d58050b1cU.png">
+<meta property="og:image" content="https://ae02.alicdn.com/kf/H17f1e01eb4e34f9e9b5123474987ff317.png">
+<meta property="og:image" content="https://ae02.alicdn.com/kf/H6bed6bb41de3467db9cb56b5b095d3396.png">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/H144a4ee7471a45feb04dcdc92f1ff809L.png">
+<meta property="og:image" content="https://ae02.alicdn.com/kf/Ha27f97044dc74c669ebf8c874ffc9d8aH.png">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/Hd715a20e76d44d25afc033a59c3e70e75.png">
+<meta property="og:image" content="https://ae04.alicdn.com/kf/H053210b6c0c948f7b8fcf85a69b14df0h.png">
+<meta property="og:image" content="https://ae02.alicdn.com/kf/Hb3f45939882c4a6ab9561d7d4821fa41N.png">
+<meta property="og:image" content="https://p.pstatp.com/origin/ff570000f28425fc1b2f">
+<meta property="og:image" content="https://p.pstatp.com/origin/ff17000079723dd39aef">
+<meta property="og:image" content="https://p.pstatp.com/origin/ffb30000fdd19f2ad67b">
+<meta property="og:image" content="https://p.pstatp.com/origin/ff9d0000c42ed227a56b">
+<meta property="og:image" content="https://p.pstatp.com/origin/ff320000d52abe99aac3">
+<meta property="og:image" content="https://p.pstatp.com/origin/ff2500012407c2a174b8">
+<meta property="og:image" content="https://p.pstatp.com/origin/dc0d0005ea3ecfe02ae0">
+<meta property="article:published_time" content="2020-02-06T04:37:49.000Z">
+<meta property="article:modified_time" content="2020-02-08T15:49:28.560Z">
+<meta property="article:author" content="拒绝下锅的鱼">
+<meta property="article:tag" content="路由器">
+<meta property="article:tag" content="网络">
+<meta property="article:tag" content="ProxmoxVE">
+<meta property="article:tag" content="LEDE">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ae04.alicdn.com/kf/H50525622fe8d4a34be364a16ee4957dcw.png">
+
+<link rel="canonical" href="https://www.huaqing.org/archives/lede-openwart.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>PVE下安装LEDE作为旁路由设置 | 边走边说@Walking Talking</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">边走边说@Walking Talking</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">By Jesson</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.huaqing.org/archives/lede-openwart.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="拒绝下锅的鱼">
+      <meta itemprop="description" content="奋青和草根，兴趣较多，爱好户外运动和互联网，偶尔拍拍照片。在这里记录一些路上的风景，记录我们在这个迷茫年代里的一些坏想法和恶观点。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="边走边说@Walking Talking">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PVE下安装LEDE作为旁路由设置
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-06 12:37:49" itemprop="dateCreated datePublished" datetime="2020-02-06T12:37:49+08:00">2020-02-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-08 23:49:28" itemprop="dateModified" datetime="2020-02-08T23:49:28+08:00">2020-02-08</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/archives/lede-openwart.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/archives/lede-openwart.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>2018年的尾巴上，在家闲的蛋疼。终于还是把All IN ONE组起来了，其实也不复杂。就是翻车鱼上面收了两根8G 1666 ECC内存，再把闲置多年的E3 1230 V2拿出来 ，事情就这么成了。这是自从出掉Gen8后的第一次折腾，这几年一直是黑群到底，简单，但也没什么新意。系统选择了ProxmoxVE，过程不说了，今天说说虚拟机上安装LEDE作为旁路由的安装和设置。</p>
+<a id="more"></a>
+
+<h2 id="安装LEDE"><a href="#安装LEDE" class="headerlink" title="安装LEDE"></a>安装LEDE</h2><p>1、第一步我们在ProxmoxVE（简称PVE）里面“创建虚拟机”。名称选一个你自己喜欢的，勾选开机自动启动。</p>
+<p><img src="https://ae04.alicdn.com/kf/H50525622fe8d4a34be364a16ee4957dcw.png" alt="创建ProxmoxVE虚拟机"></p>
+<p>2、不使用任何介质，我不需要硬盘。</p>
+<p><img src="https://ae02.alicdn.com/kf/Ha096c381c379408286837eddb3d4a83c6.png" alt="不使用任何介质"></p>
+<p>3、显卡选择“标准VGA”。<br><img src="https://ae04.alicdn.com/kf/H755a9523e30f4970a0e186429812d73fw.png" alt="显卡选择“标准VGA”"></p>
+<p>4、硬盘随便选，反正一会要删除的。<br><img src="https://ae05.alicdn.com/kf/Ha841e8b9ebcf45f7aade0610a51129717.png" alt="硬盘随便选"></p>
+<p>5、CPU我选择2线程，2核心，这时可以根据你的情况选择。<br><img src="https://ae02.alicdn.com/kf/H6c983bc18d5e45c2a36b0e3d58050b1cU.png" alt="CPU我选择2线程，2核心"></p>
+<p>6、设置LEDE的内存，1G差不多了吧。<br><img src="https://ae02.alicdn.com/kf/H17f1e01eb4e34f9e9b5123474987ff317.png" alt="设置LEDE的内存"></p>
+<p>7、网卡选择E1000，这样可以跑满千兆网速。防火墙需要取消勾选。<br><img src="https://ae02.alicdn.com/kf/H6bed6bb41de3467db9cb56b5b095d3396.png" alt="网卡选择E1000"></p>
+<p>8、预览配置后，确定建立。<br><img src="https://ae01.alicdn.com/kf/H144a4ee7471a45feb04dcdc92f1ff809L.png" alt="预览配置后，确定建立"></p>
+<p>9、把不使用的硬盘分离<br><img src="https://ae02.alicdn.com/kf/Ha27f97044dc74c669ebf8c874ffc9d8aH.png" alt="把不使用的硬盘分离"></p>
+<p>10、删除这个硬盘<br><img src="https://ae01.alicdn.com/kf/Hd715a20e76d44d25afc033a59c3e70e75.png" alt="删除这个硬盘"></p>
+<p>11、接下来将我们下载的固件<code>openwrt-koolshare-mod-v2.31-r10822-50aa0525d1-x86-64-combined-squashfs.img</code>更名为<code>lede.img</code>，上传到PVE的root文件夹。</p>
+<pre><code>chmod +x img2kvm
+./img2kvm lede.img 105 vm-105-disk-1
+</code></pre>
+
+<p>这里的105是指虚拟主机的ID,请更改为你对应的数字。输入命令后，转换文件，成功如下图所未：</p>
+<p><img src="https://ae04.alicdn.com/kf/H053210b6c0c948f7b8fcf85a69b14df0h.png" alt="img2kvm转换文件"></p>
+<p>12、回到PVE，双击添加未使用的硬盘。<br><img src="https://ae02.alicdn.com/kf/Hb3f45939882c4a6ab9561d7d4821fa41N.png" alt="双击添加未使用的硬盘"></p>
+<p>启动吧~！你的虚拟主机就建立好了。只是启动以后，需要修改虚拟机的IP地址，否则默认的192.168.1.1是登陆不上去的。</p>
+<h2 id="修改LEDE路由器管理IP"><a href="#修改LEDE路由器管理IP" class="headerlink" title="修改LEDE路由器管理IP"></a>修改LEDE路由器管理IP</h2><p>1、修改我们刚刚安装LEDE路由器的LAN口IP</p>
+<pre><code>vi /etc/config/network</code></pre>
+
+<p><img src="https://p.pstatp.com/origin/ff570000f28425fc1b2f" alt="LEDE路由器的LAN口IP"></p>
+<p>找到其中<code>option ipaddr</code>，将后面的<code>192.168.1.1</code>修改为我们需要的IP，比如我就修改为<code>192.168.4.251</code>。</p>
+<p>2、保存退出并重启路由器</p>
+<pre><code>reboot</code></pre>
+
+<p><img src="https://p.pstatp.com/origin/ff17000079723dd39aef" alt="保存退出并重启路由器"></p>
+<h2 id="LEDE旁路设置"><a href="#LEDE旁路设置" class="headerlink" title="LEDE旁路设置"></a>LEDE旁路设置</h2><p>1、打开路由器管理页，输入默认密码<code>koolshare</code>登陆。</p>
+<p>2、打开网络–接口，删除WAN和WAN6这两个接口。<br><img src="https://p.pstatp.com/origin/ffb30000fdd19f2ad67b" alt="15.jpg"></p>
+<p>3、编辑LAN接口，设置网关地址和DNS地址<br><img src="https://p.pstatp.com/origin/ff9d0000c42ed227a56b" alt="17.jpg"></p>
+<p>4、接到最后，关闭DHCP服务。<br><img src="https://p.pstatp.com/origin/ff320000d52abe99aac3" alt="16.jpg"></p>
+<p>5、打开防火墙，允许转发。<br><img src="https://p.pstatp.com/origin/ff2500012407c2a174b8" alt="18.jpg"><br><img src="https://p.pstatp.com/origin/dc0d0005ea3ecfe02ae0" alt="19.jpg"></p>
+<p>至此，基本设置已经完成。接下来就是安装插件，设置Dnsmasq的事情了，LEDE可以帮你做很多事情。<br>但是有一点需要提醒，真正的生效，需要在主路由DHCP服务中，指定网关为LEDE的192.168.4.251才能让所有流量都通过LEDE来转发噢。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>拒绝下锅的鱼
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.huaqing.org/archives/lede-openwart.html" title="PVE下安装LEDE作为旁路由设置">https://www.huaqing.org/archives/lede-openwart.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag"><i class="fa fa-tag"></i> 路由器</a>
+              <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"><i class="fa fa-tag"></i> 网络</a>
+              <a href="/tags/ProxmoxVE/" rel="tag"><i class="fa fa-tag"></i> ProxmoxVE</a>
+              <a href="/tags/LEDE/" rel="tag"><i class="fa fa-tag"></i> LEDE</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/archives/bye-bye-8012.html" rel="prev" title="Bye-Bye!8012">
+      <i class="fa fa-chevron-left"></i> Bye-Bye!8012
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装LEDE"><span class="nav-number">1.</span> <span class="nav-text">安装LEDE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改LEDE路由器管理IP"><span class="nav-number">2.</span> <span class="nav-text">修改LEDE路由器管理IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LEDE旁路设置"><span class="nav-number">3.</span> <span class="nav-text">LEDE旁路设置</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="拒绝下锅的鱼"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">拒绝下锅的鱼</p>
+  <div class="site-description" itemprop="description">奋青和草根，兴趣较多，爱好户外运动和互联网，偶尔拍拍照片。在这里记录一些路上的风景，记录我们在这个迷茫年代里的一些坏想法和恶观点。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">133</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">50</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://gist.github.com/jessone/5477182#file-hosts" title="GitHub → https:&#x2F;&#x2F;gist.github.com&#x2F;jessone&#x2F;5477182#file-hosts" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:jesson.jie@gmail.com" title="E-Mail → mailto:jesson.jie@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2004 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">拒绝下锅的鱼</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.1
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'xH8LerzPnbAE9sWjrJz2DWGw-gzGzoHsz',
+      appKey     : 'I5AB5rhQikbMMTaDoMgLzjPE',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

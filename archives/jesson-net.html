@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.huaqing.org","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="给网站换域名是件非常麻烦而且痛苦的事，做一个不太恰当的比喻。小壁虎的尾巴断了，疼痛自然是不用的，在长出新尾巴之前还不帅。每一个爱折腾的人，或多或少都为网站换过域名，有些我们是自愿的，也有被逼的。我来说说，关于边走边说域名的那些事。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于域名那点事">
+<meta property="og:url" content="https://www.huaqing.org/archives/jesson-net.html">
+<meta property="og:site_name" content="边走边说@Walking Talking">
+<meta property="og:description" content="给网站换域名是件非常麻烦而且痛苦的事，做一个不太恰当的比喻。小壁虎的尾巴断了，疼痛自然是不用的，在长出新尾巴之前还不帅。每一个爱折腾的人，或多或少都为网站换过域名，有些我们是自愿的，也有被逼的。我来说说，关于边走边说域名的那些事。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2011-08-22T12:00:37.000Z">
+<meta property="article:modified_time" content="2018-10-08T13:20:26.192Z">
+<meta property="article:author" content="拒绝下锅的鱼">
+<meta property="article:tag" content="互联网">
+<meta property="article:tag" content="域名">
+<meta property="article:tag" content="VPS">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.huaqing.org/archives/jesson-net.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>关于域名那点事 | 边走边说@Walking Talking</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">边走边说@Walking Talking</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">By Jesson</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.huaqing.org/archives/jesson-net.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="拒绝下锅的鱼">
+      <meta itemprop="description" content="奋青和草根，兴趣较多，爱好户外运动和互联网，偶尔拍拍照片。在这里记录一些路上的风景，记录我们在这个迷茫年代里的一些坏想法和恶观点。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="边走边说@Walking Talking">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于域名那点事
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2011-08-22 20:00:37" itemprop="dateCreated datePublished" datetime="2011-08-22T20:00:37+08:00">2011-08-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-10-08 21:20:26" itemprop="dateModified" datetime="2018-10-08T21:20:26+08:00">2018-10-08</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/archives/jesson-net.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/archives/jesson-net.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>给网站换<a href="https://www.huaqing.org/tag/%E5%9F%9F%E5%90%8D/">域名</a>是件非常麻烦而且痛苦的事，做一个不太恰当的比喻。小壁虎的尾巴断了，疼痛自然是不用的，在长出新尾巴之前还不帅。每一个爱折腾的人，或多或少都为网站换过<strong>域名</strong>，有些我们是自愿的，也有被逼的。我来说说，关于<a href="https://www.huaqing.org">边走边说</a>域名的那些事。</p>
+<a id="more"></a>
+
+
+<h1 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h1><blockquote>
+<p>域名（Domain Name），是由一串用点分隔的名字组成的Internet上某一台计算机或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置，地理上的域名，指代有行政自主权的一个地方区域）。域名是一个IP地址上有“面具” 。一个域名的目的是便于记忆和沟通的一组服务器的地址（网站，电子邮件，FTP等）。域名作为力所能及难忘的互联网参与者的名称，如电脑，网络和服务。世界上第一个注册的域名是在1985年1月注册的。</p>
+</blockquote>
+<p><a href="https://www.huaqing.org">边走边说@Walking Talking</a>定位是我个人自留地，所以域名也比较随意。大约是2003年，写下了第一篇Weblog，那会用的是L-blog的程序搭建。使用的还是二域名<code>blog.szdns.net</code>，过了也不知道多久，就觉得应该建立自己的个人品牌，所以考虑注册与自己有关的域名。最开始注册了<code>huaqing.name</code>。那会.Name域名刚推出来，觉得应该会很酷。可惜，用了你就知道有多痛苦。.Name限制非常多，很多DNS服务器不支持解析，一会又不支持Cname记录，一会又不支持MX记录，不能这样，也不能那样，它好像就是后妈养的。</p>
+<p><code>huaqing.name</code>还没到期，我就重新注册了<code>huaqing.org</code>，自然就把.Name给扔了。<code>.Org</code>域名也算是挺不错的不错，<code>.Org</code>表示非盈利性组织，这不正好用作个人的自留地嘛。</p>
+<p>既然拼音名的域名有了，我就想弄个英文名的域名。我一直默默的关注着<code>jesson.org</code>，只可惜这个域名落在1&amp;1手里好多年了，曾经以为他们会放弃。但是结果令人发指，虽然没有做站，但是他们居然持有9年了，我算是服了。</p>
+<p><code>Jesson.net</code>被台湾一家名为<strong>今寶企業有限公司</strong>持有，这家公司历史都19年了，域名也拿了好多年了。<code>Jesson.com</code>更是不敢想，人家97年就收入囊中了，那会我还没跟电脑见过面呢。我知道掉这几个域名掉下来的可能性微乎其微。但还是忍不住偶尔去查一下whois，希望总在不经意间嘛~！呵呵。</p>
+<p>上个月，还真就邪门了。Jesson.net的域名状态居然到了Redemption Period（赎回期），我笑啊~！我偷着乐啊！这回删除是肯定的，可我能抢到吗？互联网上的抢玉米的大佬是八面埋伏。我甚至想花60美金向各代抢注的网站预订了，可一想到那白花花的银子，我吞了吞口水。这活，咱自个儿揽下还不行么。</p>
+<p>经过PR、Alxea、搜索引擎等多方分析，我觉得互联网的玉米大佬跟我争的机会很小，这米在他们眼里不值钱。比较有可能的是<code>Jesson.com</code>和<code>Jesson.cn</code>的持有者，.Com是老大，估计这样的米也不稀得要。.Cn是赛格一个柜台的老板，估计不会有这个意识。</p>
+<p>就这样，在这个月黑风高的夜晚。闹钟响的时候，我迅速起床打开电脑。左手一台，右手一台，左右开弓，一分钟就把<a href="http://jesson.net" target="_blank" rel="noopener">Jesson.net</a>搞定了。</p>
+<h1 id="Tips："><a href="#Tips：" class="headerlink" title="Tips："></a>Tips：</h1><p>域名可千万记得续费哦，详见<a href="https://www.huaqing.org/archives/huaqing-org.html">域名过期续费惊魂记</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>拒绝下锅的鱼
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.huaqing.org/archives/jesson-net.html" title="关于域名那点事">https://www.huaqing.org/archives/jesson-net.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" rel="tag"><i class="fa fa-tag"></i> 互联网</a>
+              <a href="/tags/%E5%9F%9F%E5%90%8D/" rel="tag"><i class="fa fa-tag"></i> 域名</a>
+              <a href="/tags/VPS/" rel="tag"><i class="fa fa-tag"></i> VPS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/archives/nordicvps.html" rel="prev" title="美国VPS选购经历">
+      <i class="fa fa-chevron-left"></i> 美国VPS选购经历
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/archives/merida-duke300.html" rel="next" title="追风的开始">
+      追风的开始 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#域名"><span class="nav-number">1.</span> <span class="nav-text">域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tips："><span class="nav-number">2.</span> <span class="nav-text">Tips：</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="拒绝下锅的鱼"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">拒绝下锅的鱼</p>
+  <div class="site-description" itemprop="description">奋青和草根，兴趣较多，爱好户外运动和互联网，偶尔拍拍照片。在这里记录一些路上的风景，记录我们在这个迷茫年代里的一些坏想法和恶观点。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">133</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">50</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://gist.github.com/jessone/5477182#file-hosts" title="GitHub → https:&#x2F;&#x2F;gist.github.com&#x2F;jessone&#x2F;5477182#file-hosts" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:jesson.jie@gmail.com" title="E-Mail → mailto:jesson.jie@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2004 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">拒绝下锅的鱼</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.1
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'xH8LerzPnbAE9sWjrJz2DWGw-gzGzoHsz',
+      appKey     : 'I5AB5rhQikbMMTaDoMgLzjPE',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

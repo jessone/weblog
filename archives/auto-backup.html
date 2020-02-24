@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.huaqing.org","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="由于人力、财力、智力等一系列问题，虽然公司有专门的信息技术部，但我们票券组的同事仍在使用Excel表格来作记录，真是可悲又可哀啊！可怜去年还是使用记事本来记录票券资料，今年好不容易进步了一点点，就是建个Excel表格来处理数据，在同事的努力下，已完相对较完善了。但问题还是不少，比如偶尔出错、记录丢失、误删除……等乱七八糟的问题。这不，昨天又向我抱怨数据表丢失了一个，我不寒而粟，一想到服务器上的目录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="批处理文件让电脑定期自动备份数据">
+<meta property="og:url" content="https://www.huaqing.org/archives/auto-backup.html">
+<meta property="og:site_name" content="边走边说@Walking Talking">
+<meta property="og:description" content="由于人力、财力、智力等一系列问题，虽然公司有专门的信息技术部，但我们票券组的同事仍在使用Excel表格来作记录，真是可悲又可哀啊！可怜去年还是使用记事本来记录票券资料，今年好不容易进步了一点点，就是建个Excel表格来处理数据，在同事的努力下，已完相对较完善了。但问题还是不少，比如偶尔出错、记录丢失、误删除……等乱七八糟的问题。这不，昨天又向我抱怨数据表丢失了一个，我不寒而粟，一想到服务器上的目录">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2007-09-15T05:19:21.000Z">
+<meta property="article:modified_time" content="2018-10-09T15:05:25.469Z">
+<meta property="article:author" content="拒绝下锅的鱼">
+<meta property="article:tag" content="技术">
+<meta property="article:tag" content="安全">
+<meta property="article:tag" content="软件">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.huaqing.org/archives/auto-backup.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>批处理文件让电脑定期自动备份数据 | 边走边说@Walking Talking</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">边走边说@Walking Talking</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">By Jesson</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.huaqing.org/archives/auto-backup.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="拒绝下锅的鱼">
+      <meta itemprop="description" content="奋青和草根，兴趣较多，爱好户外运动和互联网，偶尔拍拍照片。在这里记录一些路上的风景，记录我们在这个迷茫年代里的一些坏想法和恶观点。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="边走边说@Walking Talking">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          批处理文件让电脑定期自动备份数据
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2007-09-15 13:19:21" itemprop="dateCreated datePublished" datetime="2007-09-15T13:19:21+08:00">2007-09-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-10-09 23:05:25" itemprop="dateModified" datetime="2018-10-09T23:05:25+08:00">2018-10-09</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/archives/auto-backup.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/archives/auto-backup.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>由于人力、财力、智力等一系列问题，虽然公司有专门的信息技术部，但我们票券组的同事仍在使用Excel表格来作记录，真是可悲又可哀啊！可怜去年还是使用记事本来记录票券资料，今年好不容易进步了一点点，就是建个Excel表格来处理数据，在同事的努力下，已完相对较完善了。但问题还是不少，比如偶尔出错、记录丢失、误删除……等乱七八糟的问题。这不，昨天又向我抱怨数据表丢失了一个，我不寒而粟，一想到服务器上的目录谁都有读写权限，如果哪位同事不小心一个Del所有文件，后果将是无法估量的。</p>
+<a id="more"></a>
+
+<p>我相信仍然还有许多公司跟我们公司一样：IT靠得住，母猪会上树。既然IT靠不住，那她们只好求助我这个伪技术啦！说了这么多的废话，其实就是想提供一个小弟多日的研究成果，自动备份<strong>Excel</strong>表格的解决方案。</p>
+<p>初步设想建个BAT文件来处理备份这种事情，但既然是备份，肯定不能只保存一个版本，我的计划是让电脑随时可以执行Backup。于是如果将备份下来的文件名添加上日期成了我头痛的事情，在网上找了很多变量都不适合，如果要结合VB那就太麻烦了点。</p>
+<p>既然使用日期来区分备份文件不行，那就使用随机数吧！隐约记得“<code>%RANDOM%</code>”可以使用。当这一问题成功解决之后，新的问题是如何区分备份的版本？于是我又加条命令实现备份日志——log。</p>
+<p>备份这事是没问题了，但每次都要手动执行，肯定比较麻烦。于是我想到自动执行，想到自动的时候就想到了组策略。不过不好意思，公司的电脑全部只有Users组的权限，于是这条路被堵了。折腾来折腾去后我发现，可以使用Windows的计划任务功能来实现（之前从没使用过这破玩意）。好了，每天下班之前，计算机会自动将远程服务器上的文件备份到本地。调试的时候，阿珍问我如果备份的文件名换了是不是就没用了？而且只能备份一个文件吗？解决方案就是使用Winrar的压缩命令找包整个目录，于是再改进就有了下面的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@REM 在下面填写备份路径和文件名</span><br><span class="line">@set DEF_INITPATH&#x3D;D:\backup\</span><br><span class="line">@cls</span><br><span class="line">@color CC</span><br><span class="line">:SelectRandomFileName</span><br><span class="line">@set DEF_BACKPATH&#x3D;%DEF_INITPATH%9月销售明细%RANDOM%.rar</span><br><span class="line">:@if exist %DEF_BACKPATH% goto SelectRandomFileName</span><br><span class="line">@echo %Date% %TIME% 备份到%DEF_BACKPATH%&gt;&gt;%DEF_INITPATH%&#x2F;log&#x2F;Backup.log</span><br><span class="line">:@copy \\10.10.1.175\public\ContactCenter\度假中台专用\个人工作站信息\票务同事工作站\票务同事每日需要完成的表格\9月销售明细.xls %DEF_BACKPATH%</span><br><span class="line"></span><br><span class="line">@C:</span><br><span class="line">@cd Program Files\WinRAR\</span><br><span class="line">@WinRAR.exe a -k -r -s -m1 %DEF_BACKPATH% \\10.10.1.175\public\ContactCenter\度假中台专用\个人工作站信息\票务同事工作站\票务同事每日需要完成的表格\</span><br><span class="line"></span><br><span class="line">@color</span><br><span class="line">@cls</span><br><span class="line">@echo %Date% %TIME% 备份到%DEF_BACKPATH%</span><br></pre></td></tr></table></figure>
+
+<p>将上面的文件保存为<code>Back.bat</code>，然后在D盘建立<code>Backup</code>目录，在该目录下建立<code>/log/bakckup.log</code>文件。然后修改你要备份的源目录路径即可运行，我懒了点，其实可以将所有的设置成为变量，统计在文件开始的时候声明。</p>
+<p>目前我选择的是压缩方式，但有一个问题点仍没找到解决方案。就是只要被备份的文件处于打开状态，Winrar就压缩不了。所以我将计划任务设置成每个开机前执行<code>Back.bat</code>，如有更好解决方法，欢迎指教。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>拒绝下锅的鱼
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.huaqing.org/archives/auto-backup.html" title="批处理文件让电脑定期自动备份数据">https://www.huaqing.org/archives/auto-backup.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag"><i class="fa fa-tag"></i> 技术</a>
+              <a href="/tags/%E5%AE%89%E5%85%A8/" rel="tag"><i class="fa fa-tag"></i> 安全</a>
+              <a href="/tags/%E8%BD%AF%E4%BB%B6/" rel="tag"><i class="fa fa-tag"></i> 软件</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/archives/linksys-wrh54g.html" rel="prev" title="用无线路由器摆脱网线束缚">
+      <i class="fa fa-chevron-left"></i> 用无线路由器摆脱网线束缚
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/archives/accounts-software-one.html" rel="next" title="如何选择一款理财软件之上篇">
+      如何选择一款理财软件之上篇 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="拒绝下锅的鱼"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">拒绝下锅的鱼</p>
+  <div class="site-description" itemprop="description">奋青和草根，兴趣较多，爱好户外运动和互联网，偶尔拍拍照片。在这里记录一些路上的风景，记录我们在这个迷茫年代里的一些坏想法和恶观点。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">133</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">50</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://gist.github.com/jessone/5477182#file-hosts" title="GitHub → https:&#x2F;&#x2F;gist.github.com&#x2F;jessone&#x2F;5477182#file-hosts" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:jesson.jie@gmail.com" title="E-Mail → mailto:jesson.jie@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2004 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">拒绝下锅的鱼</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.1
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'xH8LerzPnbAE9sWjrJz2DWGw-gzGzoHsz',
+      appKey     : 'I5AB5rhQikbMMTaDoMgLzjPE',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

@@ -142,8 +142,8 @@
 </ol>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>github</tag>
         <tag>hexo</tag>
       </tags>
@@ -161,8 +161,8 @@
 <h2 id="Potatso2爱国上网规则集"><a href="#Potatso2爱国上网规则集" class="headerlink" title="Potatso2爱国上网规则集"></a>Potatso2爱国上网规则集</h2><p><code>https://gist.githubusercontent.com/jessone/d77a30fd2b4ee7e7c931507c57f77c33/raw/</code><br>以上配置文件仅适用于Potatso2，请输入网址导入，或者扫描下面的二维码。<br><img src="https://s.fxn.cn/usr/uploads/2017/05/3336425591.png" alt="potatso破墙规则文件"></p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>iOS</tag>
         <tag>iPhone</tag>
         <tag>Apple</tag>
@@ -289,8 +289,8 @@
 <p>通过以上的代码，可以举一反三，备份多个网站或多个文件夹，无非就是多添加几条crontab而以。我的VPS上执行自动备份的除了有网站和数据库外，还有Nginx的配置文件和SSL证书文件等。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>VPS</tag>
         <tag>博客</tag>
         <tag>虚拟主机</tag>
@@ -380,8 +380,8 @@
 </ul>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>安全</tag>
         <tag>SSL</tag>
       </tags>
@@ -397,8 +397,8 @@
 <p>为了关心又拍云的价格，偶然发现他们新开了一个UPYUN联盟，每月可以获赠10GB空间和15GB流量，估计是顶不住七牛云免费的压力。所以关心一下中小网站站长。马上发邮件申请，昨星期五给我开通了空间及流量，今天赶紧上来把接口配置好~！以后，Typecho的上传可以对接UPYUN啦！妈妈再也不用担心我的空间流量不足啦！</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>博客</tag>
         <tag>CDN</tag>
         <tag>SSL</tag>
@@ -451,10 +451,10 @@
 <p>这个流程很容易理解，那中间人攻击也很明显。如果我给你的短信内容是“老板，今天赚了100块”，短信中心如果攻击你的话，很容易就把短信内容改成“老板，今天我亏了100块”。</p>
 <p>都看明白中间人攻击了吧，那是相当的危险，短信中心可以通过拦截、窃听、伪造、更改……任意用户的任意短信。</p>
 <p>反过来，中国联通进行的TCP会话劫持就是这个道理。所以，上网的时候，千万别以为没人知道你干了什么、说了什么、看了什么。任何时候，只要有数据流，一切都可以被拦截、窃听、伪造、更改。前文所出现的症状，其实就是被拦截和更改了计算机与计算机之间的数据。好啦！鬼找出来了，接下来就是去搬救兵。什么？怎么解决？准确来说，除了挂SSH和VPN以外，根本没有解决办法。你要发短信，就得通过短信中心号码。作为你的上层设备，通常情况下，你不可能绕的过去。</p>
-<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>临时解决办法，找出中间人攻击的网址，进行屏蔽。结果就是每次访问京东、亚马逊等网站，第一次都是该页无法显示，按F5再刷新一下就好了。这就是我第一个截图，为什么访问京东为什么该页无法显示。上饶联通合作的恶意网址是<a href="http://www.0634bbs.com、www.0410bbs.com，通过路由器或我维护的hosts文件，屏蔽他们。" target="_blank" rel="noopener">www.0634bbs.com、www.0410bbs.com，通过路由器或我维护的hosts文件，屏蔽他们。</a><br>永久解决办法，我们只能通过一些方法，来阻止ISP作恶，我选择向工信部投诉。打电话给客服？？算了吧，你得客服解释半天什么是会话劫持，什么症状，而且MM们还一脸的无辜。甚至，我有理由怀疑，这到底是联通的官方行为，还是底下技术员以权谋私。</p>
+<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>临时解决办法，找出中间人攻击的网址，进行屏蔽。结果就是每次访问京东、亚马逊等网站，第一次都是该页无法显示，按F5再刷新一下就好了。这就是我第一个截图，为什么访问京东为什么该页无法显示。上饶联通合作的恶意网址是<a href="http://www.0634bbs.com" target="_blank" rel="noopener">www.0634bbs.com</a>    、<a href="http://www.0410bbs.com" target="_blank" rel="noopener">www.0410bbs.com</a>    ，通过路由器或<a href="/archives/hosts.html">我维护的hosts文件</a>，屏蔽他们。<br>永久解决办法，我们只能通过一些方法，来阻止ISP作恶，我选择向工信部投诉。打电话给客服？？算了吧，你得客服解释半天什么是会话劫持，什么症状，而且MM们还一脸的无辜。甚至，我有理由怀疑，这到底是联通的官方行为，还是底下技术员以权谋私。</p>
 <p><img src="//s.fxn.cn/usr/uploads/2014/02/98657088.jpg" alt="投诉中国联通TCP会话劫持和中间人攻击"></p>
 <h1 id="投诉内容"><a href="#投诉内容" class="headerlink" title="投诉内容"></a>投诉内容</h1><blockquote>
-<p>我家接入的是江西上饶联通宽带20M光纤，之前一直正常使用，近期在上网时发现被所访问的网站联通恶意劫持。具体的表现为：<br>受劫持的网站有如京东商城、亚马逊、易迅网、当当网……等等，以下简称购物网站。<br>在打开这些购物网站时，联通进行了“TCP会话劫持”。将用户访问的网站强制劫持到联通指定的网址，使用户的每次购物都是通过上饶联通参加的“网站联盟”进入购物网站，以获取购物网站的返点。<br>强烈要求联通立即停止使用非法手段，恶意获取不当得利。在联通的网站上对用户道歉，并承诺今后不再使用“TCP会话劫持”等类似恶意方法攻击互联网用户。<br>本人是互联网相关专业的学生（骗人的），对联通所有行为都已截图并录相保存。<br>据刑法第二百八十六条和计算机安全保护条例，本人保留对联通公司的法律诉讼权利。</p>
+<p>我家接入的是江西上饶联通宽带20M光纤，之前一直正常使用，近期在上网时发现被所访问的网站联通恶意劫持。具体的表现为：<br>受劫持的网站有如京东商城<a href="http://www.jd.com" target="_blank" rel="noopener">www.jd.com</a>    、亚马逊<a href="http://www.amazon.cn" target="_blank" rel="noopener">www.amazon.cn</a>    、易迅网<a href="http://www.yixun.com" target="_blank" rel="noopener">www.yixun.com</a>    、当当网<a href="http://www.dangdang.com" target="_blank" rel="noopener">www.dangdang.com</a>    ……等等，以下简称购物网站。<br>在打开这些购物网站时，联通进行了“TCP会话劫持”。将用户访问的网站强制劫持到联通指定的网址，使用户的每次购物都是通过上饶联通参加的“网站联盟”进入购物网站，以获取购物网站的返点。<br>强烈要求联通立即停止使用非法手段，恶意获取不当得利。在联通的网站上对用户道歉，并承诺今后不再使用“TCP会话劫持”等类似恶意方法攻击互联网用户。<br>本人是互联网相关专业的学生（骗人的），对联通所有行为都已截图并录相保存。<br>据刑法第二百八十六条和计算机安全保护条例，本人保留对联通公司的法律诉讼权利。</p>
 </blockquote>
 <p>投诉能不能生效，我还不敢说，但是其码这是促进社会文明进步的努力。如果投诉成功，我会到亲戚家，把中国移动也投诉上。希望每个见到此文的朋友都记住，如果ISP作恶了，第一时间投诉，一次不行就两次，总要投诉到他们停止作恶为止。</p>
 <p>用一句话结尾：天朝不违法，违法不天朝。</p>
@@ -463,8 +463,8 @@
 </blockquote>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
       </tags>
   </entry>
   <entry>
@@ -501,9 +501,9 @@
 ]]></content>
       <tags>
         <tag>阅读</tag>
-        <tag>Google</tag>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
+        <tag>Google</tag>
       </tags>
   </entry>
   <entry>
@@ -535,9 +535,9 @@
 <p>保存设置，重启路由器，把IPTV插到LAN2一点也不管用。遂继续百度解决方案，无意看到tomato会使LAN口的顺序颠倒。赶紧将IPTV切换至LAN3，完美解决。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
         <tag>路由器</tag>
+        <tag>互联网</tag>
       </tags>
   </entry>
   <entry>
@@ -648,9 +648,9 @@
 <h2 id="Tips："><a href="#Tips：" class="headerlink" title="Tips："></a>Tips：</h2><p>本文所指Hosts文件托管在github，访问地址<a href="https://t.huaqing.org/hosts" target="_blank" rel="noopener">https://t.huaqing.org/hosts</a></p>
 ]]></content>
       <tags>
-        <tag>广告</tag>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
+        <tag>广告</tag>
         <tag>隐私</tag>
         <tag>github</tag>
       </tags>
@@ -672,9 +672,9 @@
 <h2 id="update-2017-5-14"><a href="#update-2017-5-14" class="headerlink" title="update:2017/5/14"></a>update:2017/5/14</h2><p>时光飞逝，这个方法早已不适用了，有更好更便捷的替代解决方案。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
         <tag>路由器</tag>
+        <tag>互联网</tag>
         <tag>隐私</tag>
         <tag>爱国上网</tag>
       </tags>
@@ -696,9 +696,9 @@
 <p>BTW：<strong>Linsys RTH54G</strong>在我离开青岛的时候，转让给一位美女了，继续在它的岗位上发挥着光和热。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
         <tag>路由器</tag>
+        <tag>互联网</tag>
         <tag>固件</tag>
         <tag>隐私</tag>
       </tags>
@@ -731,8 +731,8 @@
 <p>所有东西都是网购的，分别来自于<a href="https://t.huaqing.org/jd" target="_blank" rel="noopener">京东商城</a>、<a href="https://t.huaqing.org/yixun" target="_blank" rel="noopener">易迅网</a>、<a href="https://t.huaqing.org/taotao" target="_blank" rel="noopener">淘宝网</a>。2012年9月11号下了第一张订单，13号下午全部到货，13号晚上装好试机。所订东西分别从北京、深圳、南京、济南、上海等地纷纷飞来，整个过程控制在72小时之类完工，速度上非常满意。包含运费总花费￥4240元，价格上也比较满意。都说数码产品掉价快，为了写日志我又重新查了一下记录，一晃一个月过去了，硬盘降20元、CPU降6元、内存涨30元、机箱降20元，其他不变。从这里可以看得出，SSD硬盘还在降价通道中，如果不着急用可以先观望。其他基本上都差不多。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>操作系统</tag>
         <tag>网购</tag>
       </tags>
@@ -752,8 +752,8 @@
 <p>帮朋友装完电脑，我自己就心痒难耐。手上有几部笔记本，要说性能，都是老爷车（IBM T60、X61、E420）。拼命的优化，这也关了那也关了，用起来还算流畅。但是，你千万莫要和我提“享受”这两个字，谁提我跟谁急眼。于是，我谋划着，给自己装台电脑。男人嘛，都应该有部台式电脑。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>操作系统</tag>
         <tag>网购</tag>
       </tags>
@@ -865,8 +865,8 @@
 ]]></content>
       <tags>
         <tag>互联网</tag>
-        <tag>域名</tag>
         <tag>VPS</tag>
+        <tag>域名</tag>
       </tags>
   </entry>
   <entry>
@@ -884,8 +884,8 @@
 <p>PS.以上所提到的VPS接受代购，稳定性都还不错，只是速度或价格有区别。个人觉得可以适当选择，比如我就不会选择Linode，虽然很稳定，但是就目前的情况下来看，He.net的Fremont很可能就杯具了。我宁愿选择Burst+Fremont来组建反向代理。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>VPS</tag>
       </tags>
   </entry>
@@ -1166,8 +1166,8 @@
 <p>以上是针对<a href="https://t.huaqing.org/taobao" target="_blank" rel="noopener">淘宝购物</a>的，可能不全，但你一定要记住一条：别贪小便宜。针对其他网络购物，情况更为复杂，有时间过几天我再介绍一个案例。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>安全</tag>
         <tag>网购</tag>
       </tags>
@@ -1192,8 +1192,8 @@
 </blockquote>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>心情</tag>
       </tags>
   </entry>
@@ -1212,8 +1212,8 @@
 <p>Wish Again —— 鱼鱼，生日快乐！</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>心情</tag>
       </tags>
   </entry>
@@ -1237,8 +1237,8 @@
 <hr>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>心情</tag>
         <tag>旅行</tag>
       </tags>
@@ -1270,8 +1270,8 @@
 <p>经过以上四个步骤之后，<a href="http://cn.wordpress.org/" target="_blank" rel="noopener">Wrodpress</a>的版本修订功能，也就是Revision将被彻底禁止。如果还有问题，欢迎留言探讨。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>博客</tag>
       </tags>
   </entry>
@@ -1332,8 +1332,8 @@
 <p>如果做网赚的新手也想尝试一下，可以通过我的链接去注册，MS你赚钱的时候我也会有点好处。也算是对我敲这么多字的回报嘛，互惠互利，何乐而不为呢？</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>博客</tag>
       </tags>
   </entry>
@@ -1386,8 +1386,8 @@
 <hr>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>心情</tag>
       </tags>
   </entry>
@@ -1407,8 +1407,8 @@
 <p>当梦想照进实现，晚上回去下老徐的电影看看~!</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>心情</tag>
       </tags>
   </entry>
@@ -1426,8 +1426,8 @@
 <p>对于<strong>wordpress</strong>的永久链接更改，网上有很多解决办法。最简单的就是使用<code>Dean&#39;s Permalinks Migration</code>来帮助你处理。作者网站是英文的，但从CN域名和35提供的博客托管来看，肯定是国人。激活插件后填入你以前的永久链接形式，比如我填的是<code>/%year%/%monthnum%/%day%/%postname%/</code>，保存即可生效，操作非常简单。这样的好处就是不会给搜索引擎返回404的错误。经过一段时间过渡后，慢慢你的URL权重基本可以实现平滑转移。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>博客</tag>
       </tags>
   </entry>
@@ -1444,8 +1444,8 @@
 <p>还没去欣赏八大关的美景，也没到处去找青岛的美食，倒是出门的路上途经了啤酒城，可因为季节的不对，城内城外都显得荒凉。因为时间大把，何苦急着去看属于自己地盘的风景呢。倒不如悠哉的四处晃晃，等着有鱼的陪伴，再一块儿去搜寻快东。有些记忆，两个人一起拥有，才更珍贵。</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>旅行</tag>
       </tags>
   </entry>
@@ -1466,8 +1466,8 @@
 <p>对比南北方的大不同，一时分不清楚自己到底习惯哪种生活方式。现在的林小猫，只能自己慢慢梳理。漫无目的时，看看楼下的大肥猫，心情依然晴天大太阳。</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>心情</tag>
       </tags>
   </entry>
@@ -1486,8 +1486,8 @@
 <p>早晨六点半起床，睡眼惺忪的打开电脑写邮件。写的是Chglish，反正BurstNet的Support看懂了，并且明白了怎么回事，回个邮件给我道歉，事情解决了。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>操作系统</tag>
         <tag>VPS</tag>
       </tags>
@@ -1508,8 +1508,8 @@
 <h1 id="2010-01-02-22-21-Update"><a href="#2010-01-02-22-21-Update" class="headerlink" title="2010-01-02 22:21 Update"></a>2010-01-02 22:21 Update</h1><p>提供<strong>Burst VPS</strong>代购服务，可以留言或在<a href="/about/">这里</a>找到我的联系方式。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>操作系统</tag>
         <tag>VPS</tag>
       </tags>
@@ -1531,8 +1531,8 @@
 <p>如果以上等等都没做好，而你未来老婆还在你身边的话，赶紧好好表现，争取宽大处理吧。毕竟来日方长，别让人一眼把你看穿了，这年头，找个好老婆不易呢~！</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>心情</tag>
       </tags>
   </entry>
@@ -1554,8 +1554,8 @@
 <p>男人会想，女人的善变，靠不住啊，<br>女人要算，男人的薪水，养不活呀<br>人生在世，何苦来哉~。</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>心情</tag>
       </tags>
   </entry>
@@ -1630,8 +1630,8 @@
 <p>包到后来不知道瞎High什么，鱼妈跟鱼开始讨论起卖辞职包子来了，我晕哦，估计卖不出去的包子会把小猫淹没的，求求二位长老放偶一马吧。差不多六点钟的样子，终于把最后一块面折磨完了，该变馒头的变馒头，变花卷的变花卷，总算可以成功落下帏幕了，无奈家里的锅太小，为了蒸熟这一堆的面食，总共是蒸了不下7次。厨房今后还是少入为妙，嘘~这话得小声点说。</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1663,8 +1663,8 @@
 </blockquote>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>户外</tag>
       </tags>
   </entry>
@@ -1683,8 +1683,8 @@
 <p>忍不住跑去百度的似水年华贴吧晃悠，原来这故事的原主人公就是刘跟黄的故事，乌镇，让多少人沦陷，爱情，又让多少人沉沦。</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>旅行</tag>
       </tags>
   </entry>
@@ -1712,8 +1712,8 @@
 <p>BTW：这不是一篇完整的内容，还有<a href="/archives/sanman-xinan-on.html">上篇</a>、<a href="/archives/sanman-xinan-middle.html">中篇</a>。</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>旅行</tag>
       </tags>
   </entry>
@@ -1745,8 +1745,8 @@
 <p>BTW：这不是一篇完整的内容，还有<a href="/archives/sanman-xinan-on.html">上篇</a>、<a href="/archives/sanman-xinan-lower.html">下篇</a>。</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>旅行</tag>
       </tags>
   </entry>
@@ -1784,8 +1784,8 @@
 <p>BTW：这不是一篇完整的内容，还有<a href="/archives/sanman-xinan-middle.html">中篇</a>、<a href="/archives/sanman-xinan-lower.html">下篇</a>。</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>旅行</tag>
       </tags>
   </entry>
@@ -1811,6 +1811,24 @@
       </tags>
   </entry>
   <entry>
+    <title>Discuz附件转移</title>
+    <url>/archives/discuz-attachments.html</url>
+    <content><![CDATA[<p>先给个忠告,建议你的BBS如果想长远发展的话,建议建站之初就应该选择远程附件.什么?已经建站了?那快转移吧!嘿嘿.</p>
+<p>论坛建立之初,附件的保存方式是按版块.于是在attachments目录就产生了<code>forumid_1、forumid_2</code>这样的文件夹.乱就乱点,本来也相安无事,但有一天改变BBS的定位,所以就存在帖子需要转移.discuz的附件可不会因帖子而一起转移,所以就存在帖子属于forumid_2,但附件却保存在forumid_1中.我不知道对你会不会有影响?反正我是受不了,于是我在后台更改为按月份的方式存储.这样好是好了,但旧数据不会转移啊!我难受,于是我就傻乎乎的编辑文档重新上传附件,一个帖子就让我差点崩溃.</p>
+<a id="more"></a>
+
+
+<p>现在想来真不知道当时哪根筋错了,其实完全不用这么麻烦.直接进phpmyadmin里面,批量将forumid_1替换为month_0905,后台刷新一下缓存,完美解决.</p>
+<p>帖子越来越多,附件也越来越多.占用空间不说,还占用资源.所以远程附件是个必然.远程附件简单一些,在后台设置好.将attachments目录中的所有附件上传到附件服务器上,然后在phpmyadmin里运行一句<code>SQLupdate cdb_attachments set remote = &#39;1&#39;</code>,再刷新一下缓存即可.当然,如果你哪天筋不对,想将远程附件转移回本地,那就运行<code>update cdb_attachments set remote = &#39;0&#39;</code>.</p>
+]]></content>
+      <tags>
+        <tag>技术</tag>
+        <tag>互联网</tag>
+        <tag>隐私</tag>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何禁用迅雷这个吸血鬼</title>
     <url>/archives/xunlei.html</url>
     <content><![CDATA[<p>很多朋友都很抱怨迅雷，软件做的确实不错，就是有点吸血鬼式的变态。普通家用，局域网中只要有一台电脑打开迅雷，那基本上其他人就甭想再干点别的什么，开个网页都比较困难，更别提是玩网游什么的。</p>
@@ -1825,27 +1843,9 @@
 <p>经过进一步了解，原来迅雷所有的资源服务器也用<code>sandai.net</code>这个域名，也就是如果把这个网址给杀了，迅雷也就无法通过P2P的方式下载了，但是又不影响普通下载。所以，封杀迅雷P2P，这招管用。</p>
 ]]></content>
       <tags>
+        <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>广告</tag>
-        <tag>互联网</tag>
-        <tag>技术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Discuz附件转移</title>
-    <url>/archives/discuz-attachments.html</url>
-    <content><![CDATA[<p>先给个忠告,建议你的BBS如果想长远发展的话,建议建站之初就应该选择远程附件.什么?已经建站了?那快转移吧!嘿嘿.</p>
-<p>论坛建立之初,附件的保存方式是按版块.于是在attachments目录就产生了<code>forumid_1、forumid_2</code>这样的文件夹.乱就乱点,本来也相安无事,但有一天改变BBS的定位,所以就存在帖子需要转移.discuz的附件可不会因帖子而一起转移,所以就存在帖子属于forumid_2,但附件却保存在forumid_1中.我不知道对你会不会有影响?反正我是受不了,于是我在后台更改为按月份的方式存储.这样好是好了,但旧数据不会转移啊!我难受,于是我就傻乎乎的编辑文档重新上传附件,一个帖子就让我差点崩溃.</p>
-<a id="more"></a>
-
-
-<p>现在想来真不知道当时哪根筋错了,其实完全不用这么麻烦.直接进phpmyadmin里面,批量将forumid_1替换为month_0905,后台刷新一下缓存,完美解决.</p>
-<p>帖子越来越多,附件也越来越多.占用空间不说,还占用资源.所以远程附件是个必然.远程附件简单一些,在后台设置好.将attachments目录中的所有附件上传到附件服务器上,然后在phpmyadmin里运行一句<code>SQLupdate cdb_attachments set remote = &#39;1&#39;</code>,再刷新一下缓存即可.当然,如果你哪天筋不对,想将远程附件转移回本地,那就运行<code>update cdb_attachments set remote = &#39;0&#39;</code>.</p>
-]]></content>
-      <tags>
-        <tag>互联网</tag>
-        <tag>技术</tag>
-        <tag>隐私</tag>
-        <tag>网络</tag>
       </tags>
   </entry>
   <entry>
@@ -1894,9 +1894,9 @@
 <p>update 2012-10-12<br>现在装机早就不用逛市场，跟JS拼智力、拼体力了。今天<a href="/archives/super-computer.html">我给自己DIY了部台式电脑</a>，所有硬件网上购买，送货到家，轻松组装。</p>
 ]]></content>
       <tags>
-        <tag>Google</tag>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
+        <tag>Google</tag>
         <tag>服务</tag>
       </tags>
   </entry>
@@ -1937,10 +1937,10 @@
 <h1 id="update-2014-03-01"><a href="#update-2014-03-01" class="headerlink" title="update 2014-03-01"></a>update 2014-03-01</h1><p>面对日益复杂的网络环境，DNS劫持这个技术已经过时，并且不为广大网络运营商所采用。他们会采用更为先进的TCP会话支持计术，详见这里《<a href="/archives/chinaunicom-session-hijack.html">无耻的ISP对用户进行TCP会话劫持</a>》。</p>
 ]]></content>
       <tags>
+        <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>Google</tag>
         <tag>广告</tag>
-        <tag>互联网</tag>
-        <tag>技术</tag>
         <tag>隐私</tag>
         <tag>服务</tag>
       </tags>
@@ -2051,8 +2051,8 @@
 <p>推荐每一位即将旅行，正在旅行，热爱旅行的阅读这本书。</p>
 ]]></content>
       <tags>
-        <tag>青春</tag>
         <tag>阅读</tag>
+        <tag>青春</tag>
         <tag>户外</tag>
         <tag>旅行</tag>
       </tags>
@@ -2074,9 +2074,9 @@
 <p>写下这些文字，忍不住跟同事聊了聊。他马上就离职了，两个公司他拿不定主意选择哪个，其中有一个是阿里巴巴。我个人建议他进阿里，或许成熟的企业不会有太多的创造但肯定会有发挥空间，特别是挺想感受一下那种文化。他问我知不知道我们公司的企业文化是什么？是什么？我真的记不得。回头打开公司的网站才找到“诚信 创新 团队 效率”，简简单单只有8个字，或许我们都可以熟悉它，但未必能像阿里的员工一样认同和理解。凝聚力在阿里表现的淋漓尽致，几千条腿就像两条腿一样走路，这是艺术还是技术？</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
-        <tag>青春</tag>
         <tag>阅读</tag>
+        <tag>青春</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -2360,8 +2360,8 @@
 </blockquote>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>路由器</tag>
+        <tag>互联网</tag>
         <tag>DNS</tag>
         <tag>固件</tag>
       </tags>
@@ -2679,8 +2679,8 @@
 <p><strong>Update：</strong>后续还拿下了Jesson.net这个域名，详见《<a href="/archives/jesson-net.html">关于域名那点事</a>》</p>
 ]]></content>
       <tags>
-        <tag>Google</tag>
         <tag>技术</tag>
+        <tag>Google</tag>
         <tag>域名</tag>
       </tags>
   </entry>
@@ -2792,8 +2792,8 @@
 <p>目前只发现以上部分，我相信除了他们之外还有千千万万个无耻之徒，但愿你们这些无耻的人能尽快学会什么叫做尊重——“注明出处”。</p>
 ]]></content>
       <tags>
-        <tag>Google</tag>
         <tag>技术</tag>
+        <tag>Google</tag>
         <tag>隐私</tag>
       </tags>
   </entry>
@@ -2817,9 +2817,9 @@
 </blockquote>
 ]]></content>
       <tags>
-        <tag>Google</tag>
         <tag>技术</tag>
         <tag>DNS</tag>
+        <tag>Google</tag>
         <tag>操作系统</tag>
       </tags>
   </entry>
@@ -2855,8 +2855,8 @@
 <p>本文一共分为上、中、下三篇，欢迎同时浏览<a href="/archives/hunan-fenghuang-one.html">湘西凤凰行之上篇</a>、<a href="/archives/hunan-fenghuang-two.html">湘西凤凰行之中篇</a>。</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>心情</tag>
         <tag>旅行</tag>
       </tags>
@@ -2892,8 +2892,8 @@
 <p>本文一共分为上、中、下三篇，欢迎同时浏览<a href="/archives/hunan-fenghuang-one.html">湘西凤凰行之上篇</a>、<a href="/archives/hunan-fenghuang-three.html">湘西凤凰行之下篇</a>。</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>心情</tag>
         <tag>旅行</tag>
       </tags>
@@ -2926,8 +2926,8 @@
 <p>本文一共分为上、中、下三篇，欢迎同时浏览<a href="/archives/hunan-fenghuang-two.html">湘西凤凰行之中篇</a>、<a href="/archives/hunan-fenghuang-three.html">湘西凤凰行之下篇</a>。</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>心情</tag>
         <tag>旅行</tag>
       </tags>
@@ -3159,8 +3159,8 @@
 <p>爱与被爱<br>真的能让自己如此彷徨么?<br>也许……<br>我将成为那窗台上即将被风干的鱼！</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>心情</tag>
       </tags>
   </entry>
@@ -3181,10 +3181,32 @@
 <p>唉，人太笨了，没办法，我搞了两小时才发现这里。典型的网络故障，很少才会在这里出现问题的。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
         <tag>路由器</tag>
+        <tag>互联网</tag>
         <tag>DNS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>收到Google Adsense的支票</title>
+    <url>/archives/google-adsense.html</url>
+    <content><![CDATA[<p>新年渐行渐远，我们开始期待下一个新年了。</p>
+<p>好久了，一点东西都不想写。脑子里乱七八糟。</p>
+<a id="more"></a>
+
+
+<p>新年伊始，最高兴莫过于收到Google AdSense的支票了。虽然不多，才$150。不过已经很满足了。</p>
+<p>人参第一次收到支票啊，你说我能不激动么？高兴之余，屁颠屁颠的拿着支票跑了两家招商银行、两家中国银行、交通银行、建设银行，不是我有那么多钱取，是他们统统不肯帮我托收啊，这帮混蛋。最后还是农行的一个MM帮我受理了，只消一点，我就只能抱着支票发呆了。</p>
+<p>话说最快三天后才能到帐。晕，这话当时听的可高兴。好像只要三天就能到帐一样。回来想想其实不然。最快三天后，最慢。。。。。。</p>
+<h1 id="update-2014-03-11"><a href="#update-2014-03-11" class="headerlink" title="update 2014-03-11"></a>update 2014-03-11</h1><blockquote>
+<p>多年以后，整理日志回忆。当时农行还是没帮我托收，第二天还是第三天就打电话叫我回去，把支票还给我了。这些银行不帮我托收的原因，无非就是因为需要合约啊之类的证明文件，一句话，证明我的这个支票是合法得来的。后来，还是在一个在光大银行上班的哥们帮我搞定。</p>
+<p>其实，如果银行需要提供什么文件，把Gooogle Adsense的协议打印给他们就可以了。后来我再也没遇到银行找我要这类东西了，我也再没收过Google Inc.的支票了，时代进步了嘛，大家都改用西联汇款了。</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>互联网</tag>
+        <tag>Google</tag>
+        <tag>广告</tag>
       </tags>
   </entry>
   <entry>
@@ -3211,28 +3233,6 @@
       <tags>
         <tag>随笔</tag>
         <tag>社会</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>收到Google Adsense的支票</title>
-    <url>/archives/google-adsense.html</url>
-    <content><![CDATA[<p>新年渐行渐远，我们开始期待下一个新年了。</p>
-<p>好久了，一点东西都不想写。脑子里乱七八糟。</p>
-<a id="more"></a>
-
-
-<p>新年伊始，最高兴莫过于收到Google AdSense的支票了。虽然不多，才$150。不过已经很满足了。</p>
-<p>人参第一次收到支票啊，你说我能不激动么？高兴之余，屁颠屁颠的拿着支票跑了两家招商银行、两家中国银行、交通银行、建设银行，不是我有那么多钱取，是他们统统不肯帮我托收啊，这帮混蛋。最后还是农行的一个MM帮我受理了，只消一点，我就只能抱着支票发呆了。</p>
-<p>话说最快三天后才能到帐。晕，这话当时听的可高兴。好像只要三天就能到帐一样。回来想想其实不然。最快三天后，最慢。。。。。。</p>
-<h1 id="update-2014-03-11"><a href="#update-2014-03-11" class="headerlink" title="update 2014-03-11"></a>update 2014-03-11</h1><blockquote>
-<p>多年以后，整理日志回忆。当时农行还是没帮我托收，第二天还是第三天就打电话叫我回去，把支票还给我了。这些银行不帮我托收的原因，无非就是因为需要合约啊之类的证明文件，一句话，证明我的这个支票是合法得来的。后来，还是在一个在光大银行上班的哥们帮我搞定。</p>
-<p>其实，如果银行需要提供什么文件，把Gooogle Adsense的协议打印给他们就可以了。后来我再也没遇到银行找我要这类东西了，我也再没收过Google Inc.的支票了，时代进步了嘛，大家都改用西联汇款了。</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Google</tag>
-        <tag>广告</tag>
-        <tag>互联网</tag>
       </tags>
   </entry>
   <entry>
@@ -3288,8 +3288,8 @@
 <p>新的一年，新的开始。今天开始。我就是一个崭新的自我。只要生命存在，一切皆可能。</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>心情</tag>
       </tags>
   </entry>
@@ -3308,8 +3308,8 @@
 <p>心里那种莫名的惆怅，越来越沉重， 关了灯，我躺回床上。伴随着黑夜等待天亮的来临。</p>
 ]]></content>
       <tags>
-        <tag>随笔</tag>
         <tag>青春</tag>
+        <tag>随笔</tag>
         <tag>心情</tag>
       </tags>
   </entry>
@@ -3349,8 +3349,8 @@
 <p>是的，是希望救赎了自由，这是重新构建的现代文明里的救赎，除了自己，我们没法依赖虚幻的救主。曼德拉说过：心，是一个人最强壮的部分。假若我们的心不停息，希望，就始终存在。</p>
 ]]></content>
       <tags>
-        <tag>青春</tag>
         <tag>阅读</tag>
+        <tag>青春</tag>
         <tag>电影</tag>
       </tags>
   </entry>
@@ -3372,9 +3372,9 @@
 <p><strong><em>BTW：嗯，看得出来，我以前也是一枚小粉红。</em></strong></p>
 ]]></content>
       <tags>
+        <tag>青春</tag>
         <tag>随笔</tag>
         <tag>社会</tag>
-        <tag>青春</tag>
       </tags>
   </entry>
   <entry>
@@ -3431,9 +3431,9 @@
 </blockquote>
 ]]></content>
       <tags>
-        <tag>青春</tag>
         <tag>阅读</tag>
         <tag>影视</tag>
+        <tag>青春</tag>
       </tags>
   </entry>
   <entry>
@@ -3468,9 +3468,9 @@
 <p>想想这些年来，我上网的时候不比睡觉的时间少多少，可是始终没能成就什么。曾经我对我的老师说：我上网，从来不玩游戏、从来不聊天、从来不看电影、从来不听音乐、从来不……，那些无聊的事我是不会做的。可是如今回头想想，是我无聊？还是那些同学无聊呢？这些年来，浪费的时间可真不少啊！</p>
 ]]></content>
       <tags>
+        <tag>青春</tag>
         <tag>随笔</tag>
         <tag>社会</tag>
-        <tag>青春</tag>
       </tags>
   </entry>
   <entry>

@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.huaqing.org","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"www.huaqing.org","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="去年装修的时候，住在亲戚家里。上网（使用中国移动宽带）的时候发现一个奇怪的现象，正常访问京东商城时，往往会自动的通过网站联盟进入。由于不是自己的电脑，加上情况不是很严重，所以也没多想，就以为是Chrome加载了某个恶意插件所为。简单的排查了一下，插件没啥问题，重装了Chrome以后，症状照旧。装修本身就很多事，也没时间去研究，所以这事也就不了了之。">
@@ -30,10 +30,10 @@
 <meta property="og:image" content="https://s.fxn.cn/usr/uploads/2014/02/2201770548.jpg">
 <meta property="og:image" content="https://s.fxn.cn/usr/uploads/2014/02/98657088.jpg">
 <meta property="article:published_time" content="2014-02-26T12:20:37.000Z">
-<meta property="article:modified_time" content="2020-02-24T07:36:54.529Z">
+<meta property="article:modified_time" content="2020-02-24T08:11:45.116Z">
 <meta property="article:author" content="拒绝下锅的鱼">
-<meta property="article:tag" content="互联网">
 <meta property="article:tag" content="技术">
+<meta property="article:tag" content="互联网">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s.fxn.cn/usr/uploads/2014/02/2201770548.jpg">
 
@@ -83,7 +83,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <div class="container">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -222,7 +222,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-24 15:36:54" itemprop="dateModified" datetime="2020-02-24T15:36:54+08:00">2020-02-24</time>
+                <time title="修改时间：2020-02-24 16:11:45" itemprop="dateModified" datetime="2020-02-24T16:11:45+08:00">2020-02-24</time>
               </span>
 
           
@@ -275,10 +275,10 @@
 <p>这个流程很容易理解，那中间人攻击也很明显。如果我给你的短信内容是“老板，今天赚了100块”，短信中心如果攻击你的话，很容易就把短信内容改成“老板，今天我亏了100块”。</p>
 <p>都看明白中间人攻击了吧，那是相当的危险，短信中心可以通过拦截、窃听、伪造、更改……任意用户的任意短信。</p>
 <p>反过来，中国联通进行的TCP会话劫持就是这个道理。所以，上网的时候，千万别以为没人知道你干了什么、说了什么、看了什么。任何时候，只要有数据流，一切都可以被拦截、窃听、伪造、更改。前文所出现的症状，其实就是被拦截和更改了计算机与计算机之间的数据。好啦！鬼找出来了，接下来就是去搬救兵。什么？怎么解决？准确来说，除了挂SSH和VPN以外，根本没有解决办法。你要发短信，就得通过短信中心号码。作为你的上层设备，通常情况下，你不可能绕的过去。</p>
-<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>临时解决办法，找出中间人攻击的网址，进行屏蔽。结果就是每次访问京东、亚马逊等网站，第一次都是该页无法显示，按F5再刷新一下就好了。这就是我第一个截图，为什么访问京东为什么该页无法显示。上饶联通合作的恶意网址是<a href="http://www.0634bbs.com、www.0410bbs.com，通过路由器或我维护的hosts文件，屏蔽他们。" target="_blank" rel="noopener">www.0634bbs.com、www.0410bbs.com，通过路由器或我维护的hosts文件，屏蔽他们。</a><br>永久解决办法，我们只能通过一些方法，来阻止ISP作恶，我选择向工信部投诉。打电话给客服？？算了吧，你得客服解释半天什么是会话劫持，什么症状，而且MM们还一脸的无辜。甚至，我有理由怀疑，这到底是联通的官方行为，还是底下技术员以权谋私。</p>
+<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>临时解决办法，找出中间人攻击的网址，进行屏蔽。结果就是每次访问京东、亚马逊等网站，第一次都是该页无法显示，按F5再刷新一下就好了。这就是我第一个截图，为什么访问京东为什么该页无法显示。上饶联通合作的恶意网址是<a href="http://www.0634bbs.com" target="_blank" rel="noopener">www.0634bbs.com</a>    、<a href="http://www.0410bbs.com" target="_blank" rel="noopener">www.0410bbs.com</a>    ，通过路由器或<a href="/archives/hosts.html">我维护的hosts文件</a>，屏蔽他们。<br>永久解决办法，我们只能通过一些方法，来阻止ISP作恶，我选择向工信部投诉。打电话给客服？？算了吧，你得客服解释半天什么是会话劫持，什么症状，而且MM们还一脸的无辜。甚至，我有理由怀疑，这到底是联通的官方行为，还是底下技术员以权谋私。</p>
 <p><img src="//s.fxn.cn/usr/uploads/2014/02/98657088.jpg" alt="投诉中国联通TCP会话劫持和中间人攻击"></p>
 <h1 id="投诉内容"><a href="#投诉内容" class="headerlink" title="投诉内容"></a>投诉内容</h1><blockquote>
-<p>我家接入的是江西上饶联通宽带20M光纤，之前一直正常使用，近期在上网时发现被所访问的网站联通恶意劫持。具体的表现为：<br>受劫持的网站有如京东商城、亚马逊、易迅网、当当网……等等，以下简称购物网站。<br>在打开这些购物网站时，联通进行了“TCP会话劫持”。将用户访问的网站强制劫持到联通指定的网址，使用户的每次购物都是通过上饶联通参加的“网站联盟”进入购物网站，以获取购物网站的返点。<br>强烈要求联通立即停止使用非法手段，恶意获取不当得利。在联通的网站上对用户道歉，并承诺今后不再使用“TCP会话劫持”等类似恶意方法攻击互联网用户。<br>本人是互联网相关专业的学生（骗人的），对联通所有行为都已截图并录相保存。<br>据刑法第二百八十六条和计算机安全保护条例，本人保留对联通公司的法律诉讼权利。</p>
+<p>我家接入的是江西上饶联通宽带20M光纤，之前一直正常使用，近期在上网时发现被所访问的网站联通恶意劫持。具体的表现为：<br>受劫持的网站有如京东商城<a href="http://www.jd.com" target="_blank" rel="noopener">www.jd.com</a>    、亚马逊<a href="http://www.amazon.cn" target="_blank" rel="noopener">www.amazon.cn</a>    、易迅网<a href="http://www.yixun.com" target="_blank" rel="noopener">www.yixun.com</a>    、当当网<a href="http://www.dangdang.com" target="_blank" rel="noopener">www.dangdang.com</a>    ……等等，以下简称购物网站。<br>在打开这些购物网站时，联通进行了“TCP会话劫持”。将用户访问的网站强制劫持到联通指定的网址，使用户的每次购物都是通过上饶联通参加的“网站联盟”进入购物网站，以获取购物网站的返点。<br>强烈要求联通立即停止使用非法手段，恶意获取不当得利。在联通的网站上对用户道歉，并承诺今后不再使用“TCP会话劫持”等类似恶意方法攻击互联网用户。<br>本人是互联网相关专业的学生（骗人的），对联通所有行为都已截图并录相保存。<br>据刑法第二百八十六条和计算机安全保护条例，本人保留对联通公司的法律诉讼权利。</p>
 </blockquote>
 <p>投诉能不能生效，我还不敢说，但是其码这是促进社会文明进步的努力。如果投诉成功，我会到亲戚家，把中国移动也投诉上。希望每个见到此文的朋友都记住，如果ISP作恶了，第一时间投诉，一次不行就两次，总要投诉到他们停止作恶为止。</p>
 <p>用一句话结尾：天朝不违法，违法不天朝。</p>
@@ -312,8 +312,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" rel="tag"><i class="fa fa-tag"></i> 互联网</a>
               <a href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag"><i class="fa fa-tag"></i> 技术</a>
+              <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" rel="tag"><i class="fa fa-tag"></i> 互联网</a>
           </div>
 
         
@@ -498,12 +498,8 @@
   
   <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
 
 
 <script src="/js/schemes/pisces.js"></script>

@@ -20,20 +20,24 @@
     var CONFIG = {"hostname":"www.huaqing.org","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="来深圳好些年了，种种原因父母一直没能来深圳看看我。这回好不容易说服二老，上网订了两张机票，从南昌到深圳一共就六百块搞定，这算是最低价了吧！到了深圳，二老听说这机场快线票价二十大洋每人，连连摇头下次不坐飞机了，火车划算些。 零柒年的最后几天，学到了一个知识。当温度不断下降，湿度持续上升的时候就会形成“冰”。因为冰冻南北交通线断了，断点郴州与世界失去联系，中国人民再一次证实了众志诚成这一词的意义。深圳">
+  <meta name="description" content="去年装修的时候，住在亲戚家里。上网（使用中国移动宽带）的时候发现一个奇怪的现象，正常访问京东商城时，往往会自动的通过网站联盟进入。由于不是自己的电脑，加上情况不是很严重，所以也没多想，就以为是Chrome加载了某个恶意插件所为。简单的排查了一下，插件没啥问题，重装了Chrome以后，症状照旧。装修本身就很多事，也没时间去研究，所以这事也就不了了之。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="欲速则不达">
-<meta property="og:url" content="https://www.huaqing.org/archives/no-speed.html">
+<meta property="og:title" content="无耻的ISP对用户进行TCP会话劫持">
+<meta property="og:url" content="https://www.huaqing.org/archives/chinaunicom-session-hijack.html">
 <meta property="og:site_name" content="边走边说@Walking Talking">
-<meta property="og:description" content="来深圳好些年了，种种原因父母一直没能来深圳看看我。这回好不容易说服二老，上网订了两张机票，从南昌到深圳一共就六百块搞定，这算是最低价了吧！到了深圳，二老听说这机场快线票价二十大洋每人，连连摇头下次不坐飞机了，火车划算些。 零柒年的最后几天，学到了一个知识。当温度不断下降，湿度持续上升的时候就会形成“冰”。因为冰冻南北交通线断了，断点郴州与世界失去联系，中国人民再一次证实了众志诚成这一词的意义。深圳">
+<meta property="og:description" content="去年装修的时候，住在亲戚家里。上网（使用中国移动宽带）的时候发现一个奇怪的现象，正常访问京东商城时，往往会自动的通过网站联盟进入。由于不是自己的电脑，加上情况不是很严重，所以也没多想，就以为是Chrome加载了某个恶意插件所为。简单的排查了一下，插件没啥问题，重装了Chrome以后，症状照旧。装修本身就很多事，也没时间去研究，所以这事也就不了了之。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2008-03-31T13:12:41.000Z">
-<meta property="article:modified_time" content="2018-10-09T13:48:44.239Z">
+<meta property="og:image" content="https://s.fxn.cn/usr/uploads/2014/02/2201770548.jpg">
+<meta property="og:image" content="https://s.fxn.cn/usr/uploads/2014/02/98657088.jpg">
+<meta property="article:published_time" content="2014-02-26T12:20:37.000Z">
+<meta property="article:modified_time" content="2020-02-24T07:36:54.529Z">
 <meta property="article:author" content="拒绝下锅的鱼">
-<meta property="article:tag" content="随笔">
+<meta property="article:tag" content="互联网">
+<meta property="article:tag" content="技术">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s.fxn.cn/usr/uploads/2014/02/2201770548.jpg">
 
-<link rel="canonical" href="https://www.huaqing.org/archives/no-speed.html">
+<link rel="canonical" href="https://www.huaqing.org/archives/chinaunicom-session-hijack.html">
 
 
 <script id="page-configurations">
@@ -45,7 +49,7 @@
   };
 </script>
 
-  <title>欲速则不达 | 边走边说@Walking Talking</title>
+  <title>无耻的ISP对用户进行TCP会话劫持 | 边走边说@Walking Talking</title>
   
 
 
@@ -188,7 +192,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.huaqing.org/archives/no-speed.html">
+    <link itemprop="mainEntityOfPage" href="https://www.huaqing.org/archives/chinaunicom-session-hijack.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -201,7 +205,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          欲速则不达
+          无耻的ISP对用户进行TCP会话劫持
         </h1>
 
         <div class="post-meta">
@@ -211,14 +215,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2008-03-31 21:12:41" itemprop="dateCreated datePublished" datetime="2008-03-31T21:12:41+08:00">2008-03-31</time>
+              <time title="创建时间：2014-02-26 20:20:37" itemprop="dateCreated datePublished" datetime="2014-02-26T20:20:37+08:00">2014-02-26</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-10-09 21:48:44" itemprop="dateModified" datetime="2018-10-09T21:48:44+08:00">2018-10-09</time>
+                <time title="修改时间：2020-02-24 15:36:54" itemprop="dateModified" datetime="2020-02-24T15:36:54+08:00">2020-02-24</time>
               </span>
 
           
@@ -237,8 +241,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/archives/no-speed.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/archives/no-speed.html" itemprop="commentCount"></span>
+    <a title="valine" href="/archives/chinaunicom-session-hijack.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/archives/chinaunicom-session-hijack.html" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -253,16 +257,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>来深圳好些年了，种种原因父母一直没能来深圳看看我。这回好不容易说服二老，上网订了两张机票，从南昌到深圳一共就六百块搞定，这算是最低价了吧！到了深圳，二老听说这机场快线票价二十大洋每人，连连摇头下次不坐飞机了，火车划算些。</p>
-<p>零柒年的最后几天，学到了一个知识。当温度不断下降，湿度持续上升的时候就会形成“冰”。因为冰冻南北交通线断了，断点郴州与世界失去联系，中国人民再一次证实了众志诚成这一词的意义。深圳的天气与往年相比虽不算最冷，但是持续最长时间的冬季。我小心翼翼的保护自己的鼻子，每天都在外套的外面再加一个冲锋衣，这个冬天好像过的特别臃肿。因为考虑到父母要来，所以冬季到来之前装了热水器，冲冷水的冬天就那么平静的结束了。</p>
+        <p>去年装修的时候，住在亲戚家里。上网（使用中国移动宽带）的时候发现一个奇怪的现象，正常访问京东商城时，往往会自动的通过网站联盟进入。由于不是自己的电脑，加上情况不是很严重，所以也没多想，就以为是Chrome加载了某个恶意插件所为。简单的排查了一下，插件没啥问题，重装了Chrome以后，症状照旧。装修本身就很多事，也没时间去研究，所以这事也就不了了之。</p>
 <a id="more"></a>
 
 
-<p>睡到迷迷糊糊的起床，大年初二还得上班呢！总在刹那间，有一点意外，我在下楼时候把脚扭……。年初二是续零柒年的最后一个工作日，但是就在这一天把脚给扭伤了，而且相当的严重。本来还想着几天假期可以上哪转悠转悠，就因为这意外的“惊喜”乖乖地待在深圳。</p>
-<p>做旅游业都好些年了，一直没泡过温泉，原因太多。三月去了趟清远的森波拉，原因很简单，可以看看西关小姐，可以泡温泉，六十八元的价格也便宜。西关小姐出场，自是激动无比，乡下来的就是有区别，跟一些记者站在同一跟线上，两脚自然微微抖动。西关小姐看起来个个真是国色天香，沉鱼落雁。只可惜，可惜我的相机质量太好，回家拿电脑一看真是一个比一个吓人，原来近视也有好处的。</p>
-<p>快下班的时候收到郑同学的短信，约我周六（前天）上梧桐。脸上的痘痘可以证明，这家伙好象青春了不少。他出门从来不定线路，这回又是让我来开路，大半年没去过梧桐山，不知道能不能记得路。更为不幸的是这家伙带来几个菜的不能再菜的小鸟，偶滴神哟。七弯八拐的走进水厂，迎面而来八十度峭壁吓倒了一大半，更是把这三位小鸟的脚都吓软了。幸好郑同学亲力亲为，手把手的把她们弄上去了，看得我都累的紧。不过，运动的感觉真好。</p>
-<p>昨天一觉醒来，小桌子上的电脑不见所踪。拍拍脑袋这不是做梦，看着打开的窗户，很明显前夜大盗光临所致。气刹我也，分期付的款都还没清呢，就被拿走了。更让我气的是，把我鼠标拔下来了，前几个星期新买的IBM小鼠标啊，价值八十大洋，居然不带走，混蛋。围着自己的屋子转悠了一圈，被偷的因素很早就埋下了，我通常在床上用电脑，用完随手放在床边，刚好靠近窗户。这个房子的窗户下面还奇怪的设置了一条站脚的地方，NND，谁建的房子？安全，不是一天练出来的，关键总在细节的地方。</p>
-<p>望着时间走在自己前面，总想快马加鞭，虽然一定能追上，但至少有希望与它缩短一步距离。心浮气燥，很多事情总是急于求成，于是就造成了有那么点三分钟热度的风格。手上握着六七个域名，总没想好要怎么用，但突然间一个灵感上来，又注册了一个。沉浮间不知不觉都手握十个之多，这下如何是好？</p>
+<p>在中国联通网上营业厅订购了一台土豪金，赠送了20M宽带两年。所以，新家几乎是没有选择的使用了联通的宽带接入服务。自从宽带装好以后，也发现类似的情况，而且每况愈下。一开始是一段时间跳一次，而且只有<a href="//t.huaqing.org/jd" target="_blank" rel="noopener">京东商城</a>和<a href="//t.huaqing.org/dangdang" target="_blank" rel="noopener">当当网</a>。后来，慢慢的基本上常见的网上商城都会跳转到联盟网页了，不再是一段时间跳一次，而是每次打开都跳转。</p>
+<p>随着新房入伙摆酒、宝贝出生、过年、拜年等事情基本忙完后，伪技术的我终于有时间静静的坐在电脑前。好好的给电脑号号脉，看看是谁那么不要脸，哪个家伙在这作恶多端，看我不去搬个救兵来收了你。</p>
+<p><img src="//s.fxn.cn/usr/uploads/2014/02/2201770548.jpg" alt="无耻的ISP对用户进行TCP会话劫持"></p>
+<p>通过详细的排查，Chrome没啥问题、系统没有问题，没有中毒，没有木马。一切都还是原来的速度，还是熟悉的界面。伟大的谢洛克·福尔摩斯说过：当其他可能都被排除之后，剩下的，即使再怎么不可思议，也一定是答案。。通过简单的抓包，很容易就抓到了这只“鬼”，原来是中国联通对我进行了“TCP会话劫持”。会话劫持劫持又称中间人攻击，来看看维基百科怎么说。</p>
+<h1 id="中间人攻击"><a href="#中间人攻击" class="headerlink" title="中间人攻击"></a>中间人攻击</h1><p>中间人攻击 （ Man-in-the-middle attack，通常缩写为MITM ）是指攻击者与通讯的两端分别创建独立的联系，并交换其所收到的数据，使通讯的两端认为他们正在通过一个私密的连接与对方直接对话，但事实上整个会话都被攻击者完全控制。在中间人攻击中，攻击者可以拦截通讯双方的通话并插入新的内容。在许多情况下这是很简单的（例如，在一个未加密的Wi-Fi 无线接入点的接受范围内的中间人攻击者，可以将自己作为一个中间人插入这个网络）。</p>
+<h1 id="如何通俗点的解释呢？"><a href="#如何通俗点的解释呢？" class="headerlink" title="如何通俗点的解释呢？"></a>如何通俗点的解释呢？</h1><p>短信大家都知道，也发过，用它来比喻就很直接了。我发条短信给你，需要三个步骤。</p>
+<ol>
+<li>我编辑短信，输入你的号码，按发送，短信发出，这叫上行。</li>
+<li>手机和手机不是点对点通讯，必须经过基站，都还记得短信中心号码么？这个短信中心号码，就是承担着中转任务。所以我的短信其实是先到短信中心，短信中心根据收件地址再转出，这叫下行。</li>
+<li>嘀嘀，嘀嘀。。你有一条新短信。对，你收到了我发给你的短信。</li>
+</ol>
+<p>这个流程很容易理解，那中间人攻击也很明显。如果我给你的短信内容是“老板，今天赚了100块”，短信中心如果攻击你的话，很容易就把短信内容改成“老板，今天我亏了100块”。</p>
+<p>都看明白中间人攻击了吧，那是相当的危险，短信中心可以通过拦截、窃听、伪造、更改……任意用户的任意短信。</p>
+<p>反过来，中国联通进行的TCP会话劫持就是这个道理。所以，上网的时候，千万别以为没人知道你干了什么、说了什么、看了什么。任何时候，只要有数据流，一切都可以被拦截、窃听、伪造、更改。前文所出现的症状，其实就是被拦截和更改了计算机与计算机之间的数据。好啦！鬼找出来了，接下来就是去搬救兵。什么？怎么解决？准确来说，除了挂SSH和VPN以外，根本没有解决办法。你要发短信，就得通过短信中心号码。作为你的上层设备，通常情况下，你不可能绕的过去。</p>
+<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>临时解决办法，找出中间人攻击的网址，进行屏蔽。结果就是每次访问京东、亚马逊等网站，第一次都是该页无法显示，按F5再刷新一下就好了。这就是我第一个截图，为什么访问京东为什么该页无法显示。上饶联通合作的恶意网址是<a href="http://www.0634bbs.com、www.0410bbs.com，通过路由器或我维护的hosts文件，屏蔽他们。" target="_blank" rel="noopener">www.0634bbs.com、www.0410bbs.com，通过路由器或我维护的hosts文件，屏蔽他们。</a><br>永久解决办法，我们只能通过一些方法，来阻止ISP作恶，我选择向工信部投诉。打电话给客服？？算了吧，你得客服解释半天什么是会话劫持，什么症状，而且MM们还一脸的无辜。甚至，我有理由怀疑，这到底是联通的官方行为，还是底下技术员以权谋私。</p>
+<p><img src="//s.fxn.cn/usr/uploads/2014/02/98657088.jpg" alt="投诉中国联通TCP会话劫持和中间人攻击"></p>
+<h1 id="投诉内容"><a href="#投诉内容" class="headerlink" title="投诉内容"></a>投诉内容</h1><blockquote>
+<p>我家接入的是江西上饶联通宽带20M光纤，之前一直正常使用，近期在上网时发现被所访问的网站联通恶意劫持。具体的表现为：<br>受劫持的网站有如京东商城、亚马逊、易迅网、当当网……等等，以下简称购物网站。<br>在打开这些购物网站时，联通进行了“TCP会话劫持”。将用户访问的网站强制劫持到联通指定的网址，使用户的每次购物都是通过上饶联通参加的“网站联盟”进入购物网站，以获取购物网站的返点。<br>强烈要求联通立即停止使用非法手段，恶意获取不当得利。在联通的网站上对用户道歉，并承诺今后不再使用“TCP会话劫持”等类似恶意方法攻击互联网用户。<br>本人是互联网相关专业的学生（骗人的），对联通所有行为都已截图并录相保存。<br>据刑法第二百八十六条和计算机安全保护条例，本人保留对联通公司的法律诉讼权利。</p>
+</blockquote>
+<p>投诉能不能生效，我还不敢说，但是其码这是促进社会文明进步的努力。如果投诉成功，我会到亲戚家，把中国移动也投诉上。希望每个见到此文的朋友都记住，如果ISP作恶了，第一时间投诉，一次不行就两次，总要投诉到他们停止作恶为止。</p>
+<p>用一句话结尾：天朝不违法，违法不天朝。</p>
+<h1 id="update："><a href="#update：" class="headerlink" title="update："></a>update：</h1><blockquote>
+<p>2014-02-27 今天下午3点左右第一个电话联系我，接着就是第二个、第三个。市公司、县公司都分别联系了我。他们一致的肯定这事肯定不是联通干的，马上派技术员上门测试。4点半左右，市公司三位工作人员到达，自带电脑。排除完我系统的问题、电脑问题、路由器问题，他们自称技术也有限，表示不知道问题出在哪，保存截屏之后离开，承诺明天一定给出回复。5点左右，县联通公司回复说自己的员工技术不行，联系了一家专家电脑公司明天上门，我勒个去，您这是要上门帮我杀毒么？<br>2014-02-28 上午11:00时，经测试。再访问京东、亚马逊、易迅等购物网站，均不会再出现劫持的现象。问题是解决了，但是联通还欠我一个解释。<br>2014-02-29 互联网是一张匿名的网，你不知道对面坐的是人还是鬼。互联网是一张透明的网，不管你做了什么，都会留下痕迹的。今天我就扒一扒大概是谁搞的鬼。Whois信息很全啊：赵新华，内蒙古赤峰人，目前在北京，两个QQ分别是907632和85043184，MSN是<a href="mailto:zxh_net@hotmail.com">zxh_net@hotmail.com</a>。赵哥人有一点胖，圆圆乎乎的，喜欢玩CF，会折腾Linux，但是善长Windows服务器，对Voip技术比较感兴趣。就职于北京九合创胜网络科技有限公司……呀，不扒了，再扒就过了。</p>
+</blockquote>
 
     </div>
 
@@ -278,7 +300,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.huaqing.org/archives/no-speed.html" title="欲速则不达">https://www.huaqing.org/archives/no-speed.html</a>
+    <a href="https://www.huaqing.org/archives/chinaunicom-session-hijack.html" title="无耻的ISP对用户进行TCP会话劫持">https://www.huaqing.org/archives/chinaunicom-session-hijack.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -290,7 +312,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag"><i class="fa fa-tag"></i> 随笔</a>
+              <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" rel="tag"><i class="fa fa-tag"></i> 互联网</a>
+              <a href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag"><i class="fa fa-tag"></i> 技术</a>
           </div>
 
         
@@ -299,12 +322,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/archives/xiaojiadao-camp.html" rel="prev" title="小辣甲岛露营记">
-      <i class="fa fa-chevron-left"></i> 小辣甲岛露营记
+    <a href="/archives/tmall-magicbox.html" rel="prev" title="你最好不要购买转让的天猫魔盒">
+      <i class="fa fa-chevron-left"></i> 你最好不要购买转让的天猫魔盒
     </a></div>
       <div class="post-nav-item">
-    <a href="/archives/safe-bankcard.html" rel="next" title="怎么使用你的银行卡才能更安全">
-      怎么使用你的银行卡才能更安全 <i class="fa fa-chevron-right"></i>
+    <a href="/archives/haitao.html" rel="next" title="海淘第一单到手啦">
+      海淘第一单到手啦 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -366,6 +389,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#中间人攻击"><span class="nav-number">1.</span> <span class="nav-text">中间人攻击</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何通俗点的解释呢？"><span class="nav-number">2.</span> <span class="nav-text">如何通俗点的解释呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决办法"><span class="nav-number">3.</span> <span class="nav-text">解决办法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#投诉内容"><span class="nav-number">4.</span> <span class="nav-text">投诉内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#update："><span class="nav-number">5.</span> <span class="nav-text">update：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

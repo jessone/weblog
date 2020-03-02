@@ -142,8 +142,8 @@
 </ol>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>github</tag>
         <tag>hexo</tag>
       </tags>
@@ -161,8 +161,8 @@
 <h2 id="Potatso2爱国上网规则集"><a href="#Potatso2爱国上网规则集" class="headerlink" title="Potatso2爱国上网规则集"></a>Potatso2爱国上网规则集</h2><p><code>https://gist.githubusercontent.com/jessone/d77a30fd2b4ee7e7c931507c57f77c33/raw/</code><br>以上配置文件仅适用于Potatso2，请输入网址导入，或者扫描下面的二维码。<br><img src="https://s.fxn.cn/usr/uploads/2017/05/3336425591.png" alt="potatso破墙规则文件"></p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>iOS</tag>
         <tag>iPhone</tag>
         <tag>Apple</tag>
@@ -289,8 +289,8 @@
 <p>通过以上的代码，可以举一反三，备份多个网站或多个文件夹，无非就是多添加几条crontab而以。我的VPS上执行自动备份的除了有网站和数据库外，还有Nginx的配置文件和SSL证书文件等。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>VPS</tag>
         <tag>博客</tag>
         <tag>虚拟主机</tag>
@@ -335,8 +335,8 @@
 <p>下单、付款，整个过程都相当的顺利，接下来就是漫长的等待。大约过了十天左右，深圳一通电话打过来“我们是顺丰的，您的货品报关需要产生20%的关税，大约是500多块钱，您是否同意支付？”，听起来，服务态度很好，话音甜美。但是，顺丰其实也是个恶棍。不提供税单，如果你需要的话，七个工作日后可以给你快递，但是自付快递费。</p>
 ]]></content>
       <tags>
-        <tag>快递</tag>
         <tag>网购</tag>
+        <tag>快递</tag>
         <tag>手表</tag>
         <tag>海关</tag>
       </tags>
@@ -380,8 +380,8 @@
 </ul>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>安全</tag>
         <tag>SSL</tag>
       </tags>
@@ -397,8 +397,8 @@
 <p>为了关心又拍云的价格，偶然发现他们新开了一个UPYUN联盟，每月可以获赠10GB空间和15GB流量，估计是顶不住七牛云免费的压力。所以关心一下中小网站站长。马上发邮件申请，昨星期五给我开通了空间及流量，今天赶紧上来把接口配置好~！以后，Typecho的上传可以对接UPYUN啦！妈妈再也不用担心我的空间流量不足啦！</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>博客</tag>
         <tag>CDN</tag>
         <tag>SSL</tag>
@@ -463,8 +463,8 @@
 </blockquote>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
       </tags>
   </entry>
   <entry>
@@ -501,9 +501,9 @@
 ]]></content>
       <tags>
         <tag>阅读</tag>
-        <tag>Google</tag>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
+        <tag>Google</tag>
       </tags>
   </entry>
   <entry>
@@ -535,9 +535,9 @@
 <p>保存设置，重启路由器，把IPTV插到LAN2一点也不管用。遂继续百度解决方案，无意看到tomato会使LAN口的顺序颠倒。赶紧将IPTV切换至LAN3，完美解决。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
         <tag>路由器</tag>
+        <tag>互联网</tag>
       </tags>
   </entry>
   <entry>
@@ -648,9 +648,9 @@
 <h2 id="Tips："><a href="#Tips：" class="headerlink" title="Tips："></a>Tips：</h2><p>本文所指Hosts文件托管在github，访问地址<a href="https://t.huaqing.org/hosts" target="_blank" rel="noopener">https://t.huaqing.org/hosts</a></p>
 ]]></content>
       <tags>
-        <tag>广告</tag>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
+        <tag>广告</tag>
         <tag>隐私</tag>
         <tag>github</tag>
       </tags>
@@ -672,9 +672,9 @@
 <h2 id="update-2017-5-14"><a href="#update-2017-5-14" class="headerlink" title="update:2017/5/14"></a>update:2017/5/14</h2><p>时光飞逝，这个方法早已不适用了，有更好更便捷的替代解决方案。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
         <tag>路由器</tag>
+        <tag>互联网</tag>
         <tag>隐私</tag>
         <tag>爱国上网</tag>
       </tags>
@@ -696,9 +696,9 @@
 <p>BTW：<strong>Linsys RTH54G</strong>在我离开青岛的时候，转让给一位美女了，继续在它的岗位上发挥着光和热。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
         <tag>路由器</tag>
+        <tag>互联网</tag>
         <tag>固件</tag>
         <tag>隐私</tag>
       </tags>
@@ -731,8 +731,8 @@
 <p>所有东西都是网购的，分别来自于<a href="https://t.huaqing.org/jd" target="_blank" rel="noopener">京东商城</a>、<a href="https://t.huaqing.org/yixun" target="_blank" rel="noopener">易迅网</a>、<a href="https://t.huaqing.org/taotao" target="_blank" rel="noopener">淘宝网</a>。2012年9月11号下了第一张订单，13号下午全部到货，13号晚上装好试机。所订东西分别从北京、深圳、南京、济南、上海等地纷纷飞来，整个过程控制在72小时之类完工，速度上非常满意。包含运费总花费￥4240元，价格上也比较满意。都说数码产品掉价快，为了写日志我又重新查了一下记录，一晃一个月过去了，硬盘降20元、CPU降6元、内存涨30元、机箱降20元，其他不变。从这里可以看得出，SSD硬盘还在降价通道中，如果不着急用可以先观望。其他基本上都差不多。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>操作系统</tag>
         <tag>网购</tag>
       </tags>
@@ -752,8 +752,8 @@
 <p>帮朋友装完电脑，我自己就心痒难耐。手上有几部笔记本，要说性能，都是老爷车（IBM T60、X61、E420）。拼命的优化，这也关了那也关了，用起来还算流畅。但是，你千万莫要和我提“享受”这两个字，谁提我跟谁急眼。于是，我谋划着，给自己装台电脑。男人嘛，都应该有部台式电脑。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>操作系统</tag>
         <tag>网购</tag>
       </tags>
@@ -865,8 +865,8 @@
 ]]></content>
       <tags>
         <tag>互联网</tag>
-        <tag>域名</tag>
         <tag>VPS</tag>
+        <tag>域名</tag>
       </tags>
   </entry>
   <entry>
@@ -884,8 +884,8 @@
 <p>PS.以上所提到的VPS接受代购，稳定性都还不错，只是速度或价格有区别。个人觉得可以适当选择，比如我就不会选择Linode，虽然很稳定，但是就目前的情况下来看，He.net的Fremont很可能就杯具了。我宁愿选择Burst+Fremont来组建反向代理。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>VPS</tag>
       </tags>
   </entry>
@@ -1166,8 +1166,8 @@
 <p>以上是针对<a href="https://t.huaqing.org/taobao" target="_blank" rel="noopener">淘宝购物</a>的，可能不全，但你一定要记住一条：别贪小便宜。针对其他网络购物，情况更为复杂，有时间过几天我再介绍一个案例。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>安全</tag>
         <tag>网购</tag>
       </tags>
@@ -1270,8 +1270,8 @@
 <p>经过以上四个步骤之后，<a href="http://cn.wordpress.org/" target="_blank" rel="noopener">Wrodpress</a>的版本修订功能，也就是Revision将被彻底禁止。如果还有问题，欢迎留言探讨。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>博客</tag>
       </tags>
   </entry>
@@ -1332,8 +1332,8 @@
 <p>如果做网赚的新手也想尝试一下，可以通过我的链接去注册，MS你赚钱的时候我也会有点好处。也算是对我敲这么多字的回报嘛，互惠互利，何乐而不为呢？</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>博客</tag>
       </tags>
   </entry>
@@ -1426,8 +1426,8 @@
 <p>对于<strong>wordpress</strong>的永久链接更改，网上有很多解决办法。最简单的就是使用<code>Dean&#39;s Permalinks Migration</code>来帮助你处理。作者网站是英文的，但从CN域名和35提供的博客托管来看，肯定是国人。激活插件后填入你以前的永久链接形式，比如我填的是<code>/%year%/%monthnum%/%day%/%postname%/</code>，保存即可生效，操作非常简单。这样的好处就是不会给搜索引擎返回404的错误。经过一段时间过渡后，慢慢你的URL权重基本可以实现平滑转移。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>博客</tag>
       </tags>
   </entry>
@@ -1486,8 +1486,8 @@
 <p>早晨六点半起床，睡眼惺忪的打开电脑写邮件。写的是Chglish，反正BurstNet的Support看懂了，并且明白了怎么回事，回个邮件给我道歉，事情解决了。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>操作系统</tag>
         <tag>VPS</tag>
       </tags>
@@ -1508,8 +1508,8 @@
 <h1 id="2010-01-02-22-21-Update"><a href="#2010-01-02-22-21-Update" class="headerlink" title="2010-01-02 22:21 Update"></a>2010-01-02 22:21 Update</h1><p>提供<strong>Burst VPS</strong>代购服务，可以留言或在<a href="/about/">这里</a>找到我的联系方式。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>操作系统</tag>
         <tag>VPS</tag>
       </tags>
@@ -1825,9 +1825,9 @@
 <p>经过进一步了解，原来迅雷所有的资源服务器也用<code>sandai.net</code>这个域名，也就是如果把这个网址给杀了，迅雷也就无法通过P2P的方式下载了，但是又不影响普通下载。所以，封杀迅雷P2P，这招管用。</p>
 ]]></content>
       <tags>
-        <tag>广告</tag>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
+        <tag>广告</tag>
       </tags>
   </entry>
   <entry>
@@ -1842,8 +1842,8 @@
 <p>帖子越来越多,附件也越来越多.占用空间不说,还占用资源.所以远程附件是个必然.远程附件简单一些,在后台设置好.将attachments目录中的所有附件上传到附件服务器上,然后在phpmyadmin里运行一句<code>SQLupdate cdb_attachments set remote = &#39;1&#39;</code>,再刷新一下缓存即可.当然,如果你哪天筋不对,想将远程附件转移回本地,那就运行<code>update cdb_attachments set remote = &#39;0&#39;</code>.</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>隐私</tag>
         <tag>网络</tag>
       </tags>
@@ -1894,9 +1894,9 @@
 <p>update 2012-10-12<br>现在装机早就不用逛市场，跟JS拼智力、拼体力了。今天<a href="/archives/super-computer.html">我给自己DIY了部台式电脑</a>，所有硬件网上购买，送货到家，轻松组装。</p>
 ]]></content>
       <tags>
-        <tag>Google</tag>
-        <tag>互联网</tag>
         <tag>技术</tag>
+        <tag>互联网</tag>
+        <tag>Google</tag>
         <tag>服务</tag>
       </tags>
   </entry>
@@ -1937,10 +1937,10 @@
 <h1 id="update-2014-03-01"><a href="#update-2014-03-01" class="headerlink" title="update 2014-03-01"></a>update 2014-03-01</h1><p>面对日益复杂的网络环境，DNS劫持这个技术已经过时，并且不为广大网络运营商所采用。他们会采用更为先进的TCP会话支持计术，详见这里《<a href="/archives/chinaunicom-session-hijack.html">无耻的ISP对用户进行TCP会话劫持</a>》。</p>
 ]]></content>
       <tags>
+        <tag>技术</tag>
+        <tag>互联网</tag>
         <tag>Google</tag>
         <tag>广告</tag>
-        <tag>互联网</tag>
-        <tag>技术</tag>
         <tag>隐私</tag>
         <tag>服务</tag>
       </tags>
@@ -2360,8 +2360,8 @@
 </blockquote>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>路由器</tag>
+        <tag>互联网</tag>
         <tag>DNS</tag>
         <tag>固件</tag>
       </tags>
@@ -2679,8 +2679,8 @@
 <p><strong>Update：</strong>后续还拿下了Jesson.net这个域名，详见《<a href="/archives/jesson-net.html">关于域名那点事</a>》</p>
 ]]></content>
       <tags>
-        <tag>Google</tag>
         <tag>技术</tag>
+        <tag>Google</tag>
         <tag>域名</tag>
       </tags>
   </entry>
@@ -2792,8 +2792,8 @@
 <p>目前只发现以上部分，我相信除了他们之外还有千千万万个无耻之徒，但愿你们这些无耻的人能尽快学会什么叫做尊重——“注明出处”。</p>
 ]]></content>
       <tags>
-        <tag>Google</tag>
         <tag>技术</tag>
+        <tag>Google</tag>
         <tag>隐私</tag>
       </tags>
   </entry>
@@ -2817,10 +2817,10 @@
 </blockquote>
 ]]></content>
       <tags>
-        <tag>Google</tag>
         <tag>技术</tag>
         <tag>DNS</tag>
         <tag>操作系统</tag>
+        <tag>Google</tag>
       </tags>
   </entry>
   <entry>
@@ -3181,10 +3181,32 @@
 <p>唉，人太笨了，没办法，我搞了两小时才发现这里。典型的网络故障，很少才会在这里出现问题的。</p>
 ]]></content>
       <tags>
-        <tag>互联网</tag>
         <tag>技术</tag>
         <tag>路由器</tag>
+        <tag>互联网</tag>
         <tag>DNS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>收到Google Adsense的支票</title>
+    <url>/archives/google-adsense.html</url>
+    <content><![CDATA[<p>新年渐行渐远，我们开始期待下一个新年了。</p>
+<p>好久了，一点东西都不想写。脑子里乱七八糟。</p>
+<a id="more"></a>
+
+
+<p>新年伊始，最高兴莫过于收到Google AdSense的支票了。虽然不多，才$150。不过已经很满足了。</p>
+<p>人参第一次收到支票啊，你说我能不激动么？高兴之余，屁颠屁颠的拿着支票跑了两家招商银行、两家中国银行、交通银行、建设银行，不是我有那么多钱取，是他们统统不肯帮我托收啊，这帮混蛋。最后还是农行的一个MM帮我受理了，只消一点，我就只能抱着支票发呆了。</p>
+<p>话说最快三天后才能到帐。晕，这话当时听的可高兴。好像只要三天就能到帐一样。回来想想其实不然。最快三天后，最慢。。。。。。</p>
+<h1 id="update-2014-03-11"><a href="#update-2014-03-11" class="headerlink" title="update 2014-03-11"></a>update 2014-03-11</h1><blockquote>
+<p>多年以后，整理日志回忆。当时农行还是没帮我托收，第二天还是第三天就打电话叫我回去，把支票还给我了。这些银行不帮我托收的原因，无非就是因为需要合约啊之类的证明文件，一句话，证明我的这个支票是合法得来的。后来，还是在一个在光大银行上班的哥们帮我搞定。</p>
+<p>其实，如果银行需要提供什么文件，把Gooogle Adsense的协议打印给他们就可以了。后来我再也没遇到银行找我要这类东西了，我也再没收过Google Inc.的支票了，时代进步了嘛，大家都改用西联汇款了。</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>互联网</tag>
+        <tag>Google</tag>
+        <tag>广告</tag>
       </tags>
   </entry>
   <entry>
@@ -3211,28 +3233,6 @@
       <tags>
         <tag>随笔</tag>
         <tag>社会</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>收到Google Adsense的支票</title>
-    <url>/archives/google-adsense.html</url>
-    <content><![CDATA[<p>新年渐行渐远，我们开始期待下一个新年了。</p>
-<p>好久了，一点东西都不想写。脑子里乱七八糟。</p>
-<a id="more"></a>
-
-
-<p>新年伊始，最高兴莫过于收到Google AdSense的支票了。虽然不多，才$150。不过已经很满足了。</p>
-<p>人参第一次收到支票啊，你说我能不激动么？高兴之余，屁颠屁颠的拿着支票跑了两家招商银行、两家中国银行、交通银行、建设银行，不是我有那么多钱取，是他们统统不肯帮我托收啊，这帮混蛋。最后还是农行的一个MM帮我受理了，只消一点，我就只能抱着支票发呆了。</p>
-<p>话说最快三天后才能到帐。晕，这话当时听的可高兴。好像只要三天就能到帐一样。回来想想其实不然。最快三天后，最慢。。。。。。</p>
-<h1 id="update-2014-03-11"><a href="#update-2014-03-11" class="headerlink" title="update 2014-03-11"></a>update 2014-03-11</h1><blockquote>
-<p>多年以后，整理日志回忆。当时农行还是没帮我托收，第二天还是第三天就打电话叫我回去，把支票还给我了。这些银行不帮我托收的原因，无非就是因为需要合约啊之类的证明文件，一句话，证明我的这个支票是合法得来的。后来，还是在一个在光大银行上班的哥们帮我搞定。</p>
-<p>其实，如果银行需要提供什么文件，把Gooogle Adsense的协议打印给他们就可以了。后来我再也没遇到银行找我要这类东西了，我也再没收过Google Inc.的支票了，时代进步了嘛，大家都改用西联汇款了。</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Google</tag>
-        <tag>广告</tag>
-        <tag>互联网</tag>
       </tags>
   </entry>
   <entry>
